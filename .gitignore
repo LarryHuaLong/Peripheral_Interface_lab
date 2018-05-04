@@ -1,7 +1,8 @@
-ip_repo/my_mips_packaged/mips_block_project.cache
-
+ip_repo/my_mips_packaged/mips_block_project.cache/
+ip_repo/my_mips_packaged/mips_block_project.sim/
+ip_repo/my_mips_packaged/mips_block_project.hw/
+ip_repo/my_mips_packaged/mips_block_project.runs/
 MIPSfpga_axi4/MIPSfpga_axi4.hw/
 MIPSfpga_axi4/MIPSfpga_axi4.runs/
 MIPSfpga_axi4/MIPSfpga_axi4.sim/
 MIPSfpga_axi4/MIPSfpga_axi4.cache/
-MIPSfpga_axi4/.Xil/
