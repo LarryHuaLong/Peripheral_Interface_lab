@@ -32,7 +32,7 @@ void delay();
 // main()
 //------------------
 int main() {
-	volatile unsigned int pushbutton, count = 0xF;
+	volatile unsigned int pushbutton, count = 0xF,temp;
 	volatile unsigned int j = 1;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
@@ -46,8 +46,26 @@ int main() {
 	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
 	delay();
 
-	while(1) {
+	while(1){
+		
+		while(0x1 & *READ_IO(UART_BASE + lsr)){
+			temp = *READ_IO(UART_BASE + rbr);
+			if(temp >'a'&&temp < 'z')temp -='a' - 'A';
+			else if(temp >'A'&&temp < 'Z')temp +='a' - 'A';
+			*WRITE_IO(UART_BASE + thr) = temp; 
+			delay();
+			if(temp == 0x0000000a){
+			*WRITE_IO(UART_BASE + thr) = 0x0000000d; //Ascii \r in transmit
+			delay();
 
+			}
+			
+		}
+delay();
+delay();
+delay();
+delay();
+/*
 		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
 		delay();
 		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
@@ -72,7 +90,7 @@ int main() {
 		delay();
 		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
 		delay();
-
+*/
 		*WRITE_IO(IO_LEDR) = count;
 
 		if (j == 1) {

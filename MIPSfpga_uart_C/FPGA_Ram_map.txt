@@ -33,44 +33,43 @@ LOAD main.o
  *fill*         0x00000000bfc0049c        0x4 00000000
                 0x00000000bfc004a0                _etext_init = ABSOLUTE (.)
 
-.text_ram       0x00000000bfc01000      0x478
+.text_ram       0x00000000bfc01000      0x3a0
                 0x00000000bfc01000                _ftext_ram = ABSOLUTE (.)
  *(.text)
  .text          0x00000000bfc01000       0x3c main.o
                 0x00000000bfc01000                delay
  *(.text.*)
- .text.startup  0x00000000bfc0103c      0x438 main.o
+ .text.startup  0x00000000bfc0103c      0x364 main.o
                 0x00000000bfc0103c                main
  *(.rodata)
  *(.rodata.*)
-                0x00000000bfc01478                . = ALIGN (0x8)
- *fill*         0x00000000bfc01474        0x4 00000000
-                0x00000000bfc01478                _etext_ram = ABSOLUTE (.)
+                0x00000000bfc013a0                . = ALIGN (0x8)
+                0x00000000bfc013a0                _etext_ram = ABSOLUTE (.)
 
-.data           0x00000000bfc01478        0x0
-                0x00000000bfc01478                _fdata_ram = ABSOLUTE (.)
+.data           0x00000000bfc013a0        0x0
+                0x00000000bfc013a0                _fdata_ram = ABSOLUTE (.)
  *(.data)
- .data          0x00000000bfc01478        0x0 main.o
- .data          0x00000000bfc01478        0x0 boot.o
-                0x00000000bfc01478                . = ALIGN (0x8)
-                0x00000000bfc09478                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x00000000bfc013a0        0x0 main.o
+ .data          0x00000000bfc013a0        0x0 boot.o
+                0x00000000bfc013a0                . = ALIGN (0x8)
+                0x00000000bfc093a0                _gp = ABSOLUTE ((. + 0x8000))
  *(.lit8)
  *(.lit4)
  *(.sdata)
-                0x00000000bfc01478                . = ALIGN (0x8)
-                0x00000000bfc01478                _edata_ram = ABSOLUTE (.)
-                0x00000000bfc01478                _fbss = .
+                0x00000000bfc013a0                . = ALIGN (0x8)
+                0x00000000bfc013a0                _edata_ram = ABSOLUTE (.)
+                0x00000000bfc013a0                _fbss = .
 
 .sbss
  *(.sbss)
  *(.scommon)
 
-.bss            0x00000000bfc01478        0x0
+.bss            0x00000000bfc013a0        0x0
  *(.bss)
- .bss           0x00000000bfc01478        0x0 main.o
- .bss           0x00000000bfc01478        0x0 boot.o
+ .bss           0x00000000bfc013a0        0x0 main.o
+ .bss           0x00000000bfc013a0        0x0 boot.o
  *(COMMON)
-                0x00000000bfc01478                _end = .
+                0x00000000bfc013a0                _end = .
 
 .gptab.sdata
  *(.gptab.data)
@@ -83,7 +82,7 @@ LOAD main.o
 /DISCARD/
  *(.reginfo)
  *(.MIPS.abiflags)
-                0x00000000bfc01478                _freemem = .
+                0x00000000bfc013a0                _freemem = .
 OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
 
 .pdr            0x0000000000000000      0x140
@@ -104,9 +103,9 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .gnu.attributes
                 0x0000000000000010       0x10 boot.o
 
-.debug_info     0x0000000000000000      0x38f
- .debug_info    0x0000000000000000      0x32c main.o
- .debug_info    0x000000000000032c       0x63 boot.o
+.debug_info     0x0000000000000000      0x2b5
+ .debug_info    0x0000000000000000      0x252 main.o
+ .debug_info    0x0000000000000252       0x63 boot.o
 
 .debug_abbrev   0x0000000000000000       0xea
  .debug_abbrev  0x0000000000000000       0xd6 main.o
@@ -121,12 +120,12 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
 .debug_ranges   0x0000000000000000       0x18
  .debug_ranges  0x0000000000000000       0x18 main.o
 
-.debug_line     0x0000000000000000      0x23b
- .debug_line    0x0000000000000000       0xfa main.o
- .debug_line    0x00000000000000fa      0x141 boot.o
+.debug_line     0x0000000000000000      0x217
+ .debug_line    0x0000000000000000       0xd6 main.o
+ .debug_line    0x00000000000000d6      0x141 boot.o
 
-.debug_str      0x0000000000000000       0xd2
- .debug_str     0x0000000000000000       0xd2 main.o
+.debug_str      0x0000000000000000       0xd7
+ .debug_str     0x0000000000000000       0xd7 main.o
 
 .debug_frame    0x0000000000000000       0x3c
  .debug_frame   0x0000000000000000       0x3c main.o
