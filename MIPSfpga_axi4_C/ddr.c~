@@ -1,0 +1,71 @@
+/*
+ * ddr.c Tests DDR on Nexys4DDR
+ */
+
+#include "fpga.h"
+
+#define inline_assembly()  asm("ori $0, $0, 0x1234")
+#define CHECK_MBYTES 1
+#define MAX_ADDRESS  10 //((CHECK_MBYTES * 1024) / 4) - 1
+
+#define CLK_FREQ 50000000
+
+#define IO_DDR	0xb0000000
+
+//------------------
+// ddr_test()
+//------------------
+void ddr_test(void) {
+  volatile unsigned int count = 0x1;
+  volatile unsigned int j;
+
+  *WRITE_IO(IO_DDR + 0) = 0xABBA;
+  *WRITE_IO(IO_DDR + 4) = 0xDABA;
+  *WRITE_IO(IO_DDR + 8) = 0xD000;
+  *WRITE_IO(IO_DDR + 12) = 0xABBA;
+  *WRITE_IO(IO_DDR + 16) = 0xDABA;
+  *WRITE_IO(IO_DDR + 20) = 0xD000;
+  *READ_IO(IO_DDR + 0) ;
+  *READ_IO(IO_DDR + 4) ;
+  *READ_IO(IO_DDR + 8) ;
+  *READ_IO(IO_DDR + 12) ;
+  *READ_IO(IO_DDR + 16) ;
+  *READ_IO(IO_DDR + 20) ;
+  
+  while(1) {
+
+	for (j = 0; j < MAX_ADDRESS; j++) {    
+		*WRITE_IO(IO_DDR + j*4) = IO_DDR + j*4;		// write to DDR
+		if (j==1)
+		    continue;
+	}
+
+	for (j = 0; j < MAX_ADDRESS; j++) {    
+		if(*READ_IO(IO_DDR + j*4) == (IO_DDR + j*4)) {
+			continue;		// read from DDR
+		} else {
+			test1 = *READ_IO(IO_DDR + j*4);
+			test2 = j*4;
+			test3 = IO_DDR + j*4;
+			count = count | 0x0000F000;
+			delay();
+		}
+	}
+
+	count = count & 0x00000FFF;
+	
+	if (count >= 0xF)
+		count = 0x1;
+	else
+		count = count << 1;
+	
+
+
+        for (j = 0; j < MAX_ADDRESS; j++) {
+            *WRITE_IO(IO_DDR + j*4) = ~(IO_DDR + j*4);		// write junk to mem
+            test4 = *READ_IO(IO_DDR + j*4);
+        }
+	}
+  return 0;
+}
+
