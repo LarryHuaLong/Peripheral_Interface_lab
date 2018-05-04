@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri May 04 16:57:41 2018
+# Process ID: 3944
+# Log file: D:/Peripheral_Interface_lab-master/ip_repo/my_mips_packaged/vivado.log
+# Journal file: D:/Peripheral_Interface_lab-master/ip_repo/my_mips_packaged\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Peripheral_Interface_lab-master/ip_repo/my_mips_packaged/mips_block_project.xpr
+INFO: [Project 1-313] Project file moved from 'C:/workspace/MIPSfpgaSOC-Beta-2015-10/packaged_ip/my_mips_packaged' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Peripheral_Interface_lab-master/ip_repo/my_mips_packaged'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 775.879 ; gain = 198.535
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri May 04 17:02:08 2018...
