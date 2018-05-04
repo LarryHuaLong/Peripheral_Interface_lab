@@ -89,6 +89,18 @@
             </spirit:vector>
           </spirit:wire>
         </spirit:port>
+        <spirit:port>
+          <spirit:name>UART_TXD_IN</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>UART_RXD_OUT</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
       </spirit:ports>
     </spirit:model>
   </spirit:component>
@@ -252,6 +264,21 @@
           <spirit:configurableElementValue spirit:referenceId="SINGLE_PORT_BRAM">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axi_uart16550_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_uart16550" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">MIPSfpga_system_axi_uart16550_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">MIPSfpga_system_xlconstant_3_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -289,6 +316,11 @@
         <spirit:activeInterface spirit:busRef="M03_AXI" spirit:componentRef="axi_interconnect_0"/>
         <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="axi_bram_ctrl_1"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axi_interconnect_0_M02_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="axi_uart16550_0"/>
+        <spirit:activeInterface spirit:busRef="M02_AXI" spirit:componentRef="axi_interconnect_0"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -315,6 +347,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M03_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="axi_uart16550_0" spirit:portRef="s_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>MIPS_MicroAptiv_UP_0_HRESETn</spirit:name>
@@ -329,6 +362,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M03_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="axi_uart16550_0" spirit:portRef="s_axi_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>EJ_TDI_1</spirit:name>
@@ -409,6 +443,21 @@
         <spirit:name>SW_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="SW"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="gpio2_io_i"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconstant_3_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_3" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="axi_uart16550_0" spirit:portRef="freeze"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>sin_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="UART_TXD_IN"/>
+        <spirit:internalPortReference spirit:componentRef="axi_uart16550_0" spirit:portRef="sin"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_uart16550_0_sout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_uart16550_0" spirit:portRef="sout"/>
+        <spirit:externalPortReference spirit:portRef="UART_RXD_OUT"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>
@@ -1321,11 +1370,36 @@
     <spirit:library>BlockDiagram/MIPSfpga_system_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m02_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">MIPSfpga_system_auto_pc_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/m02_couplers_to_m02_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./m02_couplers_to_m02_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_m02_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/m02_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -1928,6 +2002,12 @@
             <spirit:name>SEG_axi_bram_ctrl_1_Mem0</spirit:name>
             <spirit:displayName>/axi_bram_ctrl_1/S_AXI/Mem0</spirit:displayName>
             <spirit:addressOffset>0x00000000</spirit:addressOffset>
+            <spirit:range>64K</spirit:range>
+          </spirit:segment>
+          <spirit:segment>
+            <spirit:name>SEG_axi_uart16550_0_Reg</spirit:name>
+            <spirit:displayName>/axi_uart16550_0/S_AXI/Reg</spirit:displayName>
+            <spirit:addressOffset>0x10400000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
         </spirit:segments>

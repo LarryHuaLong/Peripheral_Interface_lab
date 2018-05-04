@@ -1,0 +1,1398 @@
+
+FPGA_Ram.elf:     file format elf32-tradlittlemips
+
+
+Disassembly of section .text_init:
+
+bfc00000 <__reset_vector>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:63
+/**************************************************************************************
+    R E S E T   E X C E P T I O N   H A N D L E R
+**************************************************************************************/
+
+LEAF(__reset_vector)
+    la a2,__cpu_init
+bfc00000:	3c06bfc0 	lui	a2,0xbfc0
+bfc00004:	24c60014 	addiu	a2,a2,20
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:64
+    jr a2
+bfc00008:	00c00008 	jr	a2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:65
+    mtc0    $0, C0_COUNT        # Clear cp0 Count (Used to measure boot time.)
+bfc0000c:	40804800 	mtc0	zero,c0_count
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:66
+    nop
+bfc00010:	00000000 	nop
+
+bfc00014 <__cpu_init>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:75
+LEAF(__cpu_init)
+
+    # Verify the code is here due to a reset and not NMI. If this is an NMI then trigger
+    # a debugger breakpoint using a sdbp instruction.
+
+    mfc0    s1, C0_STATUS       # Read CP0 Status
+bfc00014:	40116000 	mfc0	s1,c0_status
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:76
+    ext     s1, s1, 19, 1       # extract NMI
+bfc00018:	7e3104c0 	ext	s1,s1,0x13,0x1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:77
+    beqz    s1, init_resources  # Branch if this is NOT an NMI exception.
+bfc0001c:	12200002 	beqz	s1,bfc00028 <init_resources>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:78
+    nop
+bfc00020:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:79
+    sdbbp                       # Failed assertion: NMI.
+bfc00024:	7000003f 	sdbbp
+
+bfc00028 <init_resources>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:85
+
+init_resources:                 # initializes resources for "cpu".
+
+    # Initialize CP0 registers
+
+    la a2,      init_cp0        # Init CP0 Status, Count, Compare, Watch*, and Cause.
+bfc00028:	3c06bfc0 	lui	a2,0xbfc0
+bfc0002c:	24c60288 	addiu	a2,a2,648
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:86
+    jalr a2
+bfc00030:	00c0f809 	jalr	a2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:87
+    nop
+bfc00034:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:118
+  #  jalr    a2
+  #  nop
+
+    # Prepare for eret to main.
+
+    la      ra, all_done        # If main returns then go to all_done:.
+bfc00038:	3c1fbfc0 	lui	ra,0xbfc0
+bfc0003c:	27ff0058 	addiu	ra,ra,88
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:119
+    move    a0, zero            # Indicate that there are no arguments available.
+bfc00040:	00002021 	move	a0,zero
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:120
+    la      v0, _start          # load the address of the CRT entry point _start.
+bfc00044:	3c02bfc0 	lui	v0,0xbfc0
+bfc00048:	24420130 	addiu	v0,v0,304
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:121
+    mtc0    v0, $30             # Write ErrorEPC with the address of main
+bfc0004c:	4082f000 	mtc0	v0,c0_errorepc
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:122
+    ehb                         # clear hazards (makes sure write to ErrorPC has completed)
+bfc00050:	000000c0 	ehb
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:126
+
+    # Return from exception will now execute code in main
+
+    eret                        # Exit reset exception handler and start execution of _start.
+bfc00054:	42000018 	eret
+
+bfc00058 <all_done>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:132
+
+
+/**************************************************************************************/
+all_done:
+    # If main returns it will return to this point.  Just spin here.
+    b       all_done
+bfc00058:	1000ffff 	b	bfc00058 <all_done>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:133
+    nop
+bfc0005c:	00000000 	nop
+
+bfc00060 <init_icache>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:60
+LEAF(init_icache)
+
+	// Can be skipped if using magic simulation cache flush
+
+	// Determine how big the I$ is
+	mfc0	v0, C0_CONFIG1		// read C0_Config1
+bfc00060:	40028001 	mfc0	v0,c0_config1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:63
+
+	// Isolate I$ Line Size
+	ext	    v1, v0, CFG1_ILSHIFT, 3		// extract IL
+bfc00064:	7c4314c0 	ext	v1,v0,0x13,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:66
+
+	// Skip ahead if No I$
+	beq	    v1, zero, done_icache
+bfc00068:	10600011 	beqz	v1,bfc000b0 <done_icache>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:67
+	nop
+bfc0006c:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:69
+
+	li	    a2, 2
+bfc00070:	24060002 	li	a2,2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:70
+	sllv    v1, a2, v1			// Now have true I$ line size in bytes
+bfc00074:	00661804 	sllv	v1,a2,v1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:72
+
+	ext	    a0, v0, CFG1_ISSHIFT, 3		// extract IS
+bfc00078:	7c441580 	ext	a0,v0,0x16,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:73
+	li	    a2, 64
+bfc0007c:	24060040 	li	a2,64
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:74
+	sllv    a0, a2, a0			// I$ Sets per way
+bfc00080:	00862004 	sllv	a0,a2,a0
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:77
+
+	// Config1IA == I$ Assoc - 1
+	ext	    a1, v0, CFG1_IASHIFT, 3		// extract IA
+bfc00084:	7c451400 	ext	a1,v0,0x10,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:78
+	add	    a1, 1
+bfc00088:	20a50001 	addi	a1,a1,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:80
+
+	mul	    a0, a0, a1			// Total number of sets
+bfc0008c:	70852002 	mul	a0,a0,a1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:82
+
+	lui	    a2, 0x8000			// Get a KSeg0 address for cacheops
+bfc00090:	3c068000 	lui	a2,0x8000
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:85
+
+	// Clear TagLo/TagHi registers
+	mtc0    zero, C0_TAGLO		// write C0_ITagLo
+bfc00094:	4080e000 	mtc0	zero,c0_taglo
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:86
+	mtc0    zero, C0_TAGHI		// write C0_ITagHi
+bfc00098:	4080e800 	mtc0	zero,c0_taghi
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:88
+
+	move    a3, a0
+bfc0009c:	00803821 	move	a3,a0
+
+bfc000a0 <next_icache_tag>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:93
+
+next_icache_tag:
+	// Index Store Tag Cache Op
+	// Will invalidate the tag entry, clear the lock bit, and clear the LRF bit
+	cache   0x8, 0(a2)			// ICIndexStTag
+bfc000a0:	bcc80000 	cache	0x8,0(a2)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:94
+	add	    a3, -1				// Decrement set counter
+bfc000a4:	20e7ffff 	addi	a3,a3,-1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:95
+	bne     a3, zero, next_icache_tag
+bfc000a8:	14e0fffd 	bnez	a3,bfc000a0 <next_icache_tag>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:96
+	add     a2, v1				// Get next line address
+bfc000ac:	00c33020 	add	a2,a2,v1
+
+bfc000b0 <done_icache>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:100
+
+done_icache:
+
+    jr      ra
+bfc000b0:	03e00008 	jr	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:101
+    nop
+bfc000b4:	00000000 	nop
+
+bfc000b8 <init_dcache>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:110
+* init_dcache invalidates all data cache entries
+**************************************************************************************/
+
+LEAF(init_dcache)
+
+	mfc0	v0, C0_CONFIG1		// read C0_Config1
+bfc000b8:	40028001 	mfc0	v0,c0_config1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:113
+
+	// Isolate D$ Line Size
+	ext	    v1, v0, CFG1_DLSHIFT, 3		// extract DL
+bfc000bc:	7c431280 	ext	v1,v0,0xa,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:116
+
+	// Skip ahead if No D$
+	beq	    v1, zero, done_dcache
+bfc000c0:	10600013 	beqz	v1,bfc00110 <done_dcache>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:117
+	nop
+bfc000c4:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:119
+
+	li	    a2, 2
+bfc000c8:	24060002 	li	a2,2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:120
+	sllv	v1, a2, v1			// Now have true D$ line size in bytes
+bfc000cc:	00661804 	sllv	v1,a2,v1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:122
+
+	ext	    a0, v0, CFG1_DSSHIFT, 3		// extract DS
+bfc000d0:	7c441340 	ext	a0,v0,0xd,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:123
+	li	    a2, 64
+bfc000d4:	24060040 	li	a2,64
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:124
+	sllv	a0, a2, a0	// D$ Sets per way
+bfc000d8:	00862004 	sllv	a0,a2,a0
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:127
+
+	// Config1DA == D$ Assoc - 1
+	ext	    a1, v0, CFG1_DASHIFT, 3		// extract DA
+bfc000dc:	7c4511c0 	ext	a1,v0,0x7,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:128
+	add	    a1, 1
+bfc000e0:	20a50001 	addi	a1,a1,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:130
+
+	mul	    a0, a0, a1			// Get total number of sets
+bfc000e4:	70852002 	mul	a0,a0,a1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:132
+
+	lui	    a2, 0x8000		    // Get a KSeg0 address for cacheops
+bfc000e8:	3c068000 	lui	a2,0x8000
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:135
+
+	// Clear TagLo/TagHi registers
+	mtc0	zero, C0_TAGLO		// write C0_TagLo
+bfc000ec:	4080e000 	mtc0	zero,c0_taglo
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:136
+	mtc0	zero, C0_TAGHI		// write C0_TagHi
+bfc000f0:	4080e800 	mtc0	zero,c0_taghi
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:137
+	mtc0	zero, C0_TAGLO, 2	// write C0_DTagLo
+bfc000f4:	4080e002 	mtc0	zero,c0_taglo1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:138
+	mtc0	zero, C0_TAGHI, 2	// write C0_DTagHi
+bfc000f8:	4080e802 	mtc0	zero,c0_taghi1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:140
+
+	move	a3, a0
+bfc000fc:	00803821 	move	a3,a0
+
+bfc00100 <next_dcache_tag>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:146
+
+next_dcache_tag:
+	// Index Store Tag Cache Op
+	// Will invalidate the tag entry, clear the lock bit, and clear the LRF bit
+
+    cache	0x9, 0(a2)			// DCIndexStTag
+bfc00100:	bcc90000 	cache	0x9,0(a2)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:147
+	add	    a3, -1			    // Decrement set counter
+bfc00104:	20e7ffff 	addi	a3,a3,-1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:149
+
+	bne	    a3, zero, next_dcache_tag
+bfc00108:	14e0fffd 	bnez	a3,bfc00100 <next_dcache_tag>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:150
+	add	    a2, v1		    	// Get next line address
+bfc0010c:	00c33020 	add	a2,a2,v1
+
+bfc00110 <done_dcache>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:153
+
+done_dcache:
+    jr      ra
+bfc00110:	03e00008 	jr	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:154
+    nop
+bfc00114:	00000000 	nop
+
+bfc00118 <change_k0_cca>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:160
+END(init_dcache)
+
+LEAF(change_k0_cca)
+	// NOTE! This code must be executed in KSEG1 (not KSGE0 uncached)
+    // Set CCA for kseg0 to cacheable
+	mfc0	v0, C0_CONFIG	// read C0_Config
+bfc00118:	40028000 	mfc0	v0,c0_config
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:161
+	li	v1, 3			// CCA for single-core processors
+bfc0011c:	24030003 	li	v1,3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:162
+      ins	v0, v1, 0, 3	// insert K0
+bfc00120:	7c621004 	ins	v0,v1,0x0,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:163
+	mtc0	v0, C0_CONFIG	// write C0_Config
+bfc00124:	40828000 	mtc0	v0,c0_config
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:164
+	jr.hb   ra
+bfc00128:	03e00408 	jr.hb	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_caches.S:165
+    	nop
+bfc0012c:	00000000 	nop
+
+bfc00130 <_start>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:59
+/**************************************************************************************
+**************************************************************************************/
+LEAF(_start)
+
+    # Set the global pointer register address to _gp - value set in linker .ld file
+    la      gp, _gp             # All share globals.
+bfc00130:	3c1cbfc1 	lui	gp,0xbfc1
+bfc00134:	279c9478 	addiu	gp,gp,-27528
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:62
+
+    # Set up the stack pointer register to STACK_BASE_ADDR defined in boot.h
+    li      sp, STACK_BASE_ADDR # Set up stack base.
+bfc00138:	3c1dbfc0 	lui	sp,0xbfc0
+bfc0013c:	37bd0900 	ori	sp,sp,0x900
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:65
+
+    # Make a stack frame; must be a multiple of 8-bytes
+    addiu   sp, sp, -8
+bfc00140:	27bdfff8 	addiu	sp,sp,-8
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:68
+
+    # Preserve return address over the call to main
+    sw      ra, 0(sp)
+bfc00144:	afbf0000 	sw	ra,0(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:70
+
+    li      s1_all_ones, 0xffffffff
+bfc00148:	2411ffff 	li	s1,-1
+
+bfc0014c <zero_bss>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:73
+
+zero_bss:
+    la      t1_temp_addr, _fbss
+bfc0014c:	3c09bfc0 	lui	t1,0xbfc0
+bfc00150:	25291478 	addiu	t1,t1,5240
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:74
+    ins     t1_temp_addr, s1_all_ones, 29, 1
+bfc00154:	7e29ef44 	ins	t1,s1,0x1d,0x1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:75
+    la      t3_temp_mark, _end
+bfc00158:	3c0bbfc0 	lui	t3,0xbfc0
+bfc0015c:	256b1478 	addiu	t3,t3,5240
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:76
+    ins     t3_temp_mark, s1_all_ones, 29, 1
+bfc00160:	7e2bef44 	ins	t3,s1,0x1d,0x1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:77
+    beq     t1_temp_addr, t3_temp_mark, invoke_main
+bfc00164:	112b0005 	beq	t1,t3,bfc0017c <invoke_main>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:78
+    nop
+bfc00168:	00000000 	nop
+
+bfc0016c <next_bss_word>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:80
+next_bss_word:
+    sw      zero, 0(t1_temp_addr)
+bfc0016c:	ad200000 	sw	zero,0(t1)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:81
+    addiu   t1_temp_addr, 4
+bfc00170:	25290004 	addiu	t1,t1,4
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:82
+    bne     t1_temp_addr, t3_temp_mark, next_bss_word
+bfc00174:	152bfffd 	bne	t1,t3,bfc0016c <next_bss_word>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:83
+    nop
+bfc00178:	00000000 	nop
+
+bfc0017c <invoke_main>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:86
+
+invoke_main:
+    la      t0, main
+bfc0017c:	3c08bfc0 	lui	t0,0xbfc0
+bfc00180:	2508103c 	addiu	t0,t0,4156
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:88
+    # Create space for the o32 argument stack
+    addiu   sp, sp, -16
+bfc00184:	27bdfff0 	addiu	sp,sp,-16
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:90
+    # Call main
+    jalr    t0
+bfc00188:	0100f809 	jalr	t0
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:91
+    nop
+bfc0018c:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:93
+
+    lw      ra, 0(sp)
+bfc00190:	8fbf0000 	lw	ra,0(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:94
+    addiu   sp, sp, 8
+bfc00194:	27bd0008 	addiu	sp,sp,8
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:95
+    jr      ra
+bfc00198:	03e00008 	jr	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/mini_crt0.S:96
+    nop
+bfc0019c:	00000000 	nop
+	...
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:149
+**************************************************************************************/
+/* NOTE: the linker script must insure that this code starts at start + 0x200 so the exception */
+/* vectors will be addressed properly. All .org assume this! */
+/* TLB refill, 32 bit task. */
+.org 0x200                      # TLB refill, 32 bit task.
+    sdbbp                       # This has the effect of starting the debugger
+bfc00200:	7000003f 	sdbbp
+	...
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:153
+    nop
+
+.org 0x280                      # XTLB refill, 64 bit task. start + 0x280
+    sdbbp                       # This has the effect of starting the debugger
+bfc00280:	7000003f 	sdbbp
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:154
+    nop
+bfc00284:	00000000 	nop
+
+bfc00288 <init_cp0>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:56
+/**************************************************************************************
+**************************************************************************************/
+LEAF(init_cp0)
+
+    // Initialize Status
+	li	v1, 0x00400404		// (M_StatusERL | M_StatusIPL1 | M_StatusBEV)
+bfc00288:	3c030040 	lui	v1,0x40
+bfc0028c:	34630404 	ori	v1,v1,0x404
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:57
+	mtc0	v1, C0_STATUS		// write C0_Status
+bfc00290:	40836000 	mtc0	v1,c0_status
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:60
+
+	// Initialize Watch registers if implemented.
+	mfc0	v0, C0_CONFIG1		// read C0_Config1
+bfc00294:	40028001 	mfc0	v0,c0_config1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:61
+	ext	v1, v0, 3, 1		// extract bit 3 WR (Watch registers implemented)
+bfc00298:	7c4300c0 	ext	v1,v0,0x3,0x1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:62
+	beq 	v1, zero, done_wr
+bfc0029c:	10600011 	beqz	v1,bfc002e4 <done_wr>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:63
+	li    	v1, 0x7				// (M_WatchHiI | M_WatchHiR | M_WatchHiW)
+bfc002a0:	24030007 	li	v1,7
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:66
+
+	// Clear all possible Watch Status bits and disable watch exceptions
+	mtc0	v1, C0_WATCHHI		// write C0_WatchHi0
+bfc002a4:	40839800 	mtc0	v1,c0_watchhi
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:67
+	mtc0	zero, C0_WATCHLO	// write C0_WatchLo0
+bfc002a8:	40809000 	mtc0	zero,c0_watchlo
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:69
+
+	mtc0	v1, C0_WATCHHI, 1	// write C0_WatchHi1
+bfc002ac:	40839801 	mtc0	v1,c0_watchhi,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:70
+	mtc0	zero, C0_WATCHLO, 1	// write C0_WatchLo1
+bfc002b0:	40809001 	mtc0	zero,c0_watchlo,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:72
+
+	mtc0	v1, C0_WATCHHI, 2	// write C0_WatchHi2
+bfc002b4:	40839802 	mtc0	v1,c0_watchhi,2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:73
+	mtc0	zero, C0_WATCHLO, 2	// write C0_WatchLo2
+bfc002b8:	40809002 	mtc0	zero,c0_watchlo,2
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:75
+
+	mtc0	v1, C0_WATCHHI, 3	// write C0_WatchHi3
+bfc002bc:	40839803 	mtc0	v1,c0_watchhi,3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:76
+	mtc0	zero, C0_WATCHLO, 3	// write C0_WatchLo3
+bfc002c0:	40809003 	mtc0	zero,c0_watchlo,3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:78
+
+	mtc0	v1, C0_WATCHHI, 4	// write C0_WatchHi4
+bfc002c4:	40839804 	mtc0	v1,c0_watchhi,4
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:79
+	mtc0	zero, C0_WATCHLO, 4	// write C0_WatchLo4
+bfc002c8:	40809004 	mtc0	zero,c0_watchlo,4
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:81
+
+	mtc0	v1, C0_WATCHHI, 5	// write C0_WatchHi5
+bfc002cc:	40839805 	mtc0	v1,c0_watchhi,5
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:82
+	mtc0	zero, C0_WATCHLO, 5	// write C0_WatchLo5
+bfc002d0:	40809005 	mtc0	zero,c0_watchlo,5
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:84
+
+	mtc0	v1, C0_WATCHHI, 6	// write C0_WatchHi6
+bfc002d4:	40839806 	mtc0	v1,c0_watchhi,6
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:85
+	mtc0	zero, C0_WATCHLO, 6	// write C0_WatchLo6
+bfc002d8:	40809006 	mtc0	zero,c0_watchlo,6
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:87
+
+	mtc0	v1, C0_WATCHHI, 7	// write C0_WatchHi7
+bfc002dc:	40839807 	mtc0	v1,c0_watchhi,7
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:88
+	mtc0	zero, C0_WATCHLO, 7	// write C0_WatchLo7
+bfc002e0:	40809007 	mtc0	zero,c0_watchlo,7
+
+bfc002e4 <done_wr>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:93
+
+done_wr:
+
+	// Clear WP bit to avoid watch exception upon user code entry, IV, and software interrupts.
+	mtc0	zero, C0_CAUSE		// write C0_Cause: Init AFTER init of CP0 WatchHi/Lo registers.
+bfc002e4:	40806800 	mtc0	zero,c0_cause
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:96
+
+	// Clear timer interrupt. (Count was cleared at the reset vector to allow timing boot.)
+	mtc0	zero, C0_COMPARE	// write C0_Compare
+bfc002e8:	40805800 	mtc0	zero,c0_compare
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:98
+
+        jr      ra
+bfc002ec:	03e00008 	jr	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_cp0.S:99
+	nop
+bfc002f0:	00000000 	nop
+	...
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:159
+
+#include "init_cp0.S"
+
+.org 0x300                      # Cache error exception. start + 0x300
+    sdbbp                       # This has the effect of starting the debugger
+bfc00300:	7000003f 	sdbbp
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:160
+    nop
+bfc00304:	00000000 	nop
+
+bfc00308 <init_tlb>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:57
+**************************************************************************************/
+LEAF(init_tlb)
+
+check_for_tlb:
+	// Determine if we have a TLB
+	mfc0    v1, C0_CONFIG			// read C0_Config
+bfc00308:	40038000 	mfc0	v1,c0_config
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:58
+	ext	    v1, v1, 7, 3			// extract MT field
+bfc0030c:	7c6311c0 	ext	v1,v1,0x7,0x3
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:59
+	li	    a3, 0x1					// load a 1 to check against
+bfc00310:	24070001 	li	a3,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:60
+	bne	    v1, a3, done_init_tlb
+bfc00314:	1467000f 	bne	v1,a3,bfc00354 <done_init_tlb>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:61
+	mfc0    v0, C0_CONFIG1			// C0_Config1
+bfc00318:	40028001 	mfc0	v0,c0_config1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:62
+	nop
+bfc0031c:	00000000 	nop
+
+bfc00320 <start_init_tlb>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:66
+
+start_init_tlb:
+	// Config1MMUSize == Number of TLB entries - 1
+	ext     v1, v0, CFG1_MMUSSHIFT, 6 // extract MMU Size
+bfc00320:	7c432e40 	ext	v1,v0,0x19,0x6
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:67
+	mtc0    zero, C0_ENTRYLO0		// write C0_EntryLo0
+bfc00324:	40801000 	mtc0	zero,c0_entrylo0
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:68
+	mtc0    zero, C0_ENTRYLO1		// write C0_EntryLo1
+bfc00328:	40801800 	mtc0	zero,c0_entrylo1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:69
+	mtc0    zero, C0_PAGEMASK		// write C0_PageMask
+bfc0032c:	40802800 	mtc0	zero,c0_pagemask
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:70
+	mtc0    zero, C0_WIRED			// write C0_Wired
+bfc00330:	40803000 	mtc0	zero,c0_wired
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:71
+	li	    a0, 0x80000000
+bfc00334:	3c048000 	lui	a0,0x8000
+
+bfc00338 <next_tlb_entry_pair>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:74
+
+next_tlb_entry_pair:
+	mtc0    v1, C0_INDEX			// write C0_Index
+bfc00338:	40830000 	mtc0	v1,c0_index
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:75
+	mtc0	a0, C0_ENTRYHI			// write C0_EntryHi
+bfc0033c:	40845000 	mtc0	a0,c0_entryhi
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:76
+	ehb
+bfc00340:	000000c0 	ehb
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:77
+	tlbwi
+bfc00344:	42000002 	tlbwi
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:78
+	add	    a0, (2<<13)				// Add 8K to the address to avoid TLB conflict with previous entry
+bfc00348:	20844000 	addi	a0,a0,16384
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:80
+
+	bne		v1, zero, next_tlb_entry_pair
+bfc0034c:	1460fffa 	bnez	v1,bfc00338 <next_tlb_entry_pair>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:81
+	add	    v1, -1
+bfc00350:	2063ffff 	addi	v1,v1,-1
+
+bfc00354 <done_init_tlb>:
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:84
+
+done_init_tlb:
+    jr      ra
+bfc00354:	03e00008 	jr	ra
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/init_tlb.S:85
+    nop
+bfc00358:	00000000 	nop
+	...
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:167
+#include "init_tlb.S"
+
+
+.org 0x380    /* General exception. */
+    # display alternating one-zeros on board LEDs
+    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
+bfc00380:	3c1ab060 	lui	k0,0xb060
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:168
+    li      k1, 0x5555          # alternating one-zeros
+bfc00384:	241b5555 	li	k1,21845
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:169
+    sw      k1, 0(k0)           # Write pattern to LEDs
+bfc00388:	af5b0000 	sw	k1,0(k0)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:170
+    eret
+bfc0038c:	42000018 	eret
+	...
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:177
+
+# If you want the above code to fit into 1k flash you will need to leave out the
+# code below. This is the code that covers the debug exception which you normally will not get.
+
+.org 0x480 /* EJTAG debug exception (EJTAG Control Register[ProbTrap] == 0.) */
+    li      r24_malta_word, BOARD_16_LEDS_ADDR     # If post boot then $24 is clobbered.
+bfc00480:	3c18b060 	lui	t8,0xb060
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:178
+    mtc0    a0, C0_DESAVE       # DeSave a0
+bfc00484:	4084f800 	mtc0	a0,c0_desave
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:179
+    mfc0    a0, C0_DEPC         # Read DEPC
+bfc00488:	4004c000 	mfc0	a0,c0_depc
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:180
+    sw      a0, 0(r24_malta_word)    # Display lower 16 bits of DEPC if there is not an EJTAG probe.
+bfc0048c:	af040000 	sw	a0,0(t8)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:181
+    mfc0    a0, C0_DESAVE       # Restore a0
+bfc00490:	4004f800 	mfc0	a0,c0_desave
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:182
+1:  b       1b  /* Stay here */
+bfc00494:	1000ffff 	b	bfc00494 <done_init_tlb+0x140>
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/boot.S:183
+    nop
+bfc00498:	00000000 	nop
+done_init_tlb():
+bfc0049c:	00000000 	nop
+
+Disassembly of section .text_ram:
+
+bfc01000 <delay>:
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:93
+		inline_assembly();	  
+	}
+	return 0;
+}
+
+void delay() {
+bfc01000:	27bdfff8 	addiu	sp,sp,-8
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01004:	afa00000 	sw	zero,0(sp)
+bfc01008:	8fa20000 	lw	v0,0(sp)
+bfc0100c:	2c422710 	sltiu	v0,v0,10000
+bfc01010:	10400008 	beqz	v0,bfc01034 <delay+0x34>
+bfc01014:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96 (discriminator 3)
+bfc01018:	8fa20000 	lw	v0,0(sp)
+bfc0101c:	24420001 	addiu	v0,v0,1
+bfc01020:	afa20000 	sw	v0,0(sp)
+bfc01024:	8fa20000 	lw	v0,0(sp)
+bfc01028:	2c422710 	sltiu	v0,v0,10000
+bfc0102c:	1440fffa 	bnez	v0,bfc01018 <delay+0x18>
+bfc01030:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:97
+}
+bfc01034:	03e00008 	jr	ra
+bfc01038:	27bd0008 	addiu	sp,sp,8
+
+bfc0103c <main>:
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:34
+void delay();
+
+//------------------
+// main()
+//------------------
+int main() {
+bfc0103c:	27bdffb0 	addiu	sp,sp,-80
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:35
+	volatile unsigned int pushbutton, count = 0xF;
+bfc01040:	2402000f 	li	v0,15
+bfc01044:	afa20048 	sw	v0,72(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:36
+	volatile unsigned int j = 1;
+bfc01048:	24020001 	li	v0,1
+bfc0104c:	afa20044 	sw	v0,68(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:38
+
+	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
+bfc01050:	24030080 	li	v1,128
+bfc01054:	3c02b040 	lui	v0,0xb040
+bfc01058:	ac43100c 	sw	v1,4108(v0)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc0105c:	afa00040 	sw	zero,64(sp)
+bfc01060:	8fa20040 	lw	v0,64(sp)
+bfc01064:	2c422710 	sltiu	v0,v0,10000
+bfc01068:	10400008 	beqz	v0,bfc0108c <main+0x50>
+bfc0106c:	3c02b040 	lui	v0,0xb040
+bfc01070:	8fa20040 	lw	v0,64(sp)
+bfc01074:	24420001 	addiu	v0,v0,1
+bfc01078:	afa20040 	sw	v0,64(sp)
+bfc0107c:	8fa20040 	lw	v0,64(sp)
+bfc01080:	2c422710 	sltiu	v0,v0,10000
+bfc01084:	1440fffa 	bnez	v0,bfc01070 <main+0x34>
+bfc01088:	3c02b040 	lui	v0,0xb040
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:40
+	volatile unsigned int pushbutton, count = 0xF;
+	volatile unsigned int j = 1;
+
+	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
+	delay();
+	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
+bfc0108c:	2403001b 	li	v1,27
+bfc01090:	ac431000 	sw	v1,4096(v0)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01094:	afa0003c 	sw	zero,60(sp)
+bfc01098:	8fa2003c 	lw	v0,60(sp)
+bfc0109c:	2c422710 	sltiu	v0,v0,10000
+bfc010a0:	10400008 	beqz	v0,bfc010c4 <main+0x88>
+bfc010a4:	3c02b040 	lui	v0,0xb040
+bfc010a8:	8fa2003c 	lw	v0,60(sp)
+bfc010ac:	24420001 	addiu	v0,v0,1
+bfc010b0:	afa2003c 	sw	v0,60(sp)
+bfc010b4:	8fa2003c 	lw	v0,60(sp)
+bfc010b8:	2c422710 	sltiu	v0,v0,10000
+bfc010bc:	1440fffa 	bnez	v0,bfc010a8 <main+0x6c>
+bfc010c0:	3c02b040 	lui	v0,0xb040
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:42
+
+	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
+	delay();
+	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
+	delay();
+	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
+bfc010c4:	ac401004 	sw	zero,4100(v0)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc010c8:	afa00038 	sw	zero,56(sp)
+bfc010cc:	8fa20038 	lw	v0,56(sp)
+bfc010d0:	2c422710 	sltiu	v0,v0,10000
+bfc010d4:	10400008 	beqz	v0,bfc010f8 <main+0xbc>
+bfc010d8:	3c02b040 	lui	v0,0xb040
+bfc010dc:	8fa20038 	lw	v0,56(sp)
+bfc010e0:	24420001 	addiu	v0,v0,1
+bfc010e4:	afa20038 	sw	v0,56(sp)
+bfc010e8:	8fa20038 	lw	v0,56(sp)
+bfc010ec:	2c422710 	sltiu	v0,v0,10000
+bfc010f0:	1440fffa 	bnez	v0,bfc010dc <main+0xa0>
+bfc010f4:	3c02b040 	lui	v0,0xb040
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:44
+	delay();
+	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
+	delay();
+	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
+	delay();
+	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
+bfc010f8:	24030003 	li	v1,3
+bfc010fc:	ac43100c 	sw	v1,4108(v0)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01100:	afa00034 	sw	zero,52(sp)
+bfc01104:	8fa20034 	lw	v0,52(sp)
+bfc01108:	2c422710 	sltiu	v0,v0,10000
+bfc0110c:	10400008 	beqz	v0,bfc01130 <main+0xf4>
+bfc01110:	3c02b040 	lui	v0,0xb040
+bfc01114:	8fa20034 	lw	v0,52(sp)
+bfc01118:	24420001 	addiu	v0,v0,1
+bfc0111c:	afa20034 	sw	v0,52(sp)
+bfc01120:	8fa20034 	lw	v0,52(sp)
+bfc01124:	2c422710 	sltiu	v0,v0,10000
+bfc01128:	1440fffa 	bnez	v0,bfc01114 <main+0xd8>
+bfc0112c:	3c02b040 	lui	v0,0xb040
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:46
+	delay();
+	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
+	delay();
+	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
+	delay();
+	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
+bfc01130:	ac401004 	sw	zero,4100(v0)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01134:	afa00030 	sw	zero,48(sp)
+bfc01138:	8fa20030 	lw	v0,48(sp)
+bfc0113c:	2c422710 	sltiu	v0,v0,10000
+bfc01140:	10400008 	beqz	v0,bfc01164 <main+0x128>
+bfc01144:	3c03b040 	lui	v1,0xb040
+bfc01148:	8fa20030 	lw	v0,48(sp)
+bfc0114c:	24420001 	addiu	v0,v0,1
+bfc01150:	afa20030 	sw	v0,48(sp)
+bfc01154:	8fa20030 	lw	v0,48(sp)
+bfc01158:	2c422710 	sltiu	v0,v0,10000
+bfc0115c:	1440fffa 	bnez	v0,bfc01148 <main+0x10c>
+bfc01160:	3c03b040 	lui	v1,0xb040
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:51
+	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
+	delay();
+
+	while(1) {
+
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+bfc01164:	24631000 	addiu	v1,v1,4096
+bfc01168:	2405000a 	li	a1,10
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:53
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+bfc0116c:	2404000d 	li	a0,13
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:55
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000004D; // Ascii M in transmit
+bfc01170:	240f004d 	li	t7,77
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:57
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000049; // Ascii I in transmit
+bfc01174:	240e0049 	li	t6,73
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:59
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000050; // Ascii P in transmit
+bfc01178:	240d0050 	li	t5,80
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:61
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000053; // Ascii S in transmit
+bfc0117c:	240c0053 	li	t4,83
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:63
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000066; // Ascii f in transmit
+bfc01180:	240b0066 	li	t3,102
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:65
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000070; // Ascii p in transmit
+bfc01184:	240a0070 	li	t2,112
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:67
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000067; // Ascii g in transmit
+bfc01188:	24090067 	li	t1,103
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:69
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000061; // Ascii a in transmit
+bfc0118c:	24080061 	li	t0,97
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:76
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+		delay();
+
+		*WRITE_IO(IO_LEDR) = count;
+bfc01190:	3c07b060 	lui	a3,0xb060
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:78
+
+		if (j == 1) {
+bfc01194:	24060001 	li	a2,1
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:84
+		    count = count << 1;
+		    if (count == 0xf000)
+		        j = 0;
+		} else {
+				count = count >> 1;
+		    if (count == 0x000f)
+bfc01198:	2418000f 	li	t8,15
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:80
+
+		*WRITE_IO(IO_LEDR) = count;
+
+		if (j == 1) {
+		    count = count << 1;
+		    if (count == 0xf000)
+bfc0119c:	3419f000 	li	t9,0xf000
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:51
+	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
+	delay();
+
+	while(1) {
+
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+bfc011a0:	ac650000 	sw	a1,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc011a4:	afa0002c 	sw	zero,44(sp)
+bfc011a8:	8fa2002c 	lw	v0,44(sp)
+bfc011ac:	2c422710 	sltiu	v0,v0,10000
+bfc011b0:	10400008 	beqz	v0,bfc011d4 <main+0x198>
+bfc011b4:	00000000 	nop
+bfc011b8:	8fa2002c 	lw	v0,44(sp)
+bfc011bc:	24420001 	addiu	v0,v0,1
+bfc011c0:	afa2002c 	sw	v0,44(sp)
+bfc011c4:	8fa2002c 	lw	v0,44(sp)
+bfc011c8:	2c422710 	sltiu	v0,v0,10000
+bfc011cc:	1440fffa 	bnez	v0,bfc011b8 <main+0x17c>
+bfc011d0:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:53
+
+	while(1) {
+
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+bfc011d4:	ac640000 	sw	a0,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc011d8:	afa00028 	sw	zero,40(sp)
+bfc011dc:	8fa20028 	lw	v0,40(sp)
+bfc011e0:	2c422710 	sltiu	v0,v0,10000
+bfc011e4:	10400008 	beqz	v0,bfc01208 <main+0x1cc>
+bfc011e8:	00000000 	nop
+bfc011ec:	8fa20028 	lw	v0,40(sp)
+bfc011f0:	24420001 	addiu	v0,v0,1
+bfc011f4:	afa20028 	sw	v0,40(sp)
+bfc011f8:	8fa20028 	lw	v0,40(sp)
+bfc011fc:	2c422710 	sltiu	v0,v0,10000
+bfc01200:	1440fffa 	bnez	v0,bfc011ec <main+0x1b0>
+bfc01204:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:55
+
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000004D; // Ascii M in transmit
+bfc01208:	ac6f0000 	sw	t7,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc0120c:	afa00024 	sw	zero,36(sp)
+bfc01210:	8fa20024 	lw	v0,36(sp)
+bfc01214:	2c422710 	sltiu	v0,v0,10000
+bfc01218:	10400008 	beqz	v0,bfc0123c <main+0x200>
+bfc0121c:	00000000 	nop
+bfc01220:	8fa20024 	lw	v0,36(sp)
+bfc01224:	24420001 	addiu	v0,v0,1
+bfc01228:	afa20024 	sw	v0,36(sp)
+bfc0122c:	8fa20024 	lw	v0,36(sp)
+bfc01230:	2c422710 	sltiu	v0,v0,10000
+bfc01234:	1440fffa 	bnez	v0,bfc01220 <main+0x1e4>
+bfc01238:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:57
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000004D; // Ascii M in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000049; // Ascii I in transmit
+bfc0123c:	ac6e0000 	sw	t6,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01240:	afa00020 	sw	zero,32(sp)
+bfc01244:	8fa20020 	lw	v0,32(sp)
+bfc01248:	2c422710 	sltiu	v0,v0,10000
+bfc0124c:	10400008 	beqz	v0,bfc01270 <main+0x234>
+bfc01250:	00000000 	nop
+bfc01254:	8fa20020 	lw	v0,32(sp)
+bfc01258:	24420001 	addiu	v0,v0,1
+bfc0125c:	afa20020 	sw	v0,32(sp)
+bfc01260:	8fa20020 	lw	v0,32(sp)
+bfc01264:	2c422710 	sltiu	v0,v0,10000
+bfc01268:	1440fffa 	bnez	v0,bfc01254 <main+0x218>
+bfc0126c:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:59
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000004D; // Ascii M in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000049; // Ascii I in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000050; // Ascii P in transmit
+bfc01270:	ac6d0000 	sw	t5,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01274:	afa0001c 	sw	zero,28(sp)
+bfc01278:	8fa2001c 	lw	v0,28(sp)
+bfc0127c:	2c422710 	sltiu	v0,v0,10000
+bfc01280:	10400008 	beqz	v0,bfc012a4 <main+0x268>
+bfc01284:	00000000 	nop
+bfc01288:	8fa2001c 	lw	v0,28(sp)
+bfc0128c:	24420001 	addiu	v0,v0,1
+bfc01290:	afa2001c 	sw	v0,28(sp)
+bfc01294:	8fa2001c 	lw	v0,28(sp)
+bfc01298:	2c422710 	sltiu	v0,v0,10000
+bfc0129c:	1440fffa 	bnez	v0,bfc01288 <main+0x24c>
+bfc012a0:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:61
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000049; // Ascii I in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000050; // Ascii P in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000053; // Ascii S in transmit
+bfc012a4:	ac6c0000 	sw	t4,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc012a8:	afa00018 	sw	zero,24(sp)
+bfc012ac:	8fa20018 	lw	v0,24(sp)
+bfc012b0:	2c422710 	sltiu	v0,v0,10000
+bfc012b4:	10400008 	beqz	v0,bfc012d8 <main+0x29c>
+bfc012b8:	00000000 	nop
+bfc012bc:	8fa20018 	lw	v0,24(sp)
+bfc012c0:	24420001 	addiu	v0,v0,1
+bfc012c4:	afa20018 	sw	v0,24(sp)
+bfc012c8:	8fa20018 	lw	v0,24(sp)
+bfc012cc:	2c422710 	sltiu	v0,v0,10000
+bfc012d0:	1440fffa 	bnez	v0,bfc012bc <main+0x280>
+bfc012d4:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:63
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000050; // Ascii P in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000053; // Ascii S in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000066; // Ascii f in transmit
+bfc012d8:	ac6b0000 	sw	t3,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc012dc:	afa00014 	sw	zero,20(sp)
+bfc012e0:	8fa20014 	lw	v0,20(sp)
+bfc012e4:	2c422710 	sltiu	v0,v0,10000
+bfc012e8:	10400008 	beqz	v0,bfc0130c <main+0x2d0>
+bfc012ec:	00000000 	nop
+bfc012f0:	8fa20014 	lw	v0,20(sp)
+bfc012f4:	24420001 	addiu	v0,v0,1
+bfc012f8:	afa20014 	sw	v0,20(sp)
+bfc012fc:	8fa20014 	lw	v0,20(sp)
+bfc01300:	2c422710 	sltiu	v0,v0,10000
+bfc01304:	1440fffa 	bnez	v0,bfc012f0 <main+0x2b4>
+bfc01308:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:65
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000053; // Ascii S in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000066; // Ascii f in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000070; // Ascii p in transmit
+bfc0130c:	ac6a0000 	sw	t2,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01310:	afa00010 	sw	zero,16(sp)
+bfc01314:	8fa20010 	lw	v0,16(sp)
+bfc01318:	2c422710 	sltiu	v0,v0,10000
+bfc0131c:	10400008 	beqz	v0,bfc01340 <main+0x304>
+bfc01320:	00000000 	nop
+bfc01324:	8fa20010 	lw	v0,16(sp)
+bfc01328:	24420001 	addiu	v0,v0,1
+bfc0132c:	afa20010 	sw	v0,16(sp)
+bfc01330:	8fa20010 	lw	v0,16(sp)
+bfc01334:	2c422710 	sltiu	v0,v0,10000
+bfc01338:	1440fffa 	bnez	v0,bfc01324 <main+0x2e8>
+bfc0133c:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:67
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000066; // Ascii f in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000070; // Ascii p in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000067; // Ascii g in transmit
+bfc01340:	ac690000 	sw	t1,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01344:	afa0000c 	sw	zero,12(sp)
+bfc01348:	8fa2000c 	lw	v0,12(sp)
+bfc0134c:	2c422710 	sltiu	v0,v0,10000
+bfc01350:	10400008 	beqz	v0,bfc01374 <main+0x338>
+bfc01354:	00000000 	nop
+bfc01358:	8fa2000c 	lw	v0,12(sp)
+bfc0135c:	24420001 	addiu	v0,v0,1
+bfc01360:	afa2000c 	sw	v0,12(sp)
+bfc01364:	8fa2000c 	lw	v0,12(sp)
+bfc01368:	2c422710 	sltiu	v0,v0,10000
+bfc0136c:	1440fffa 	bnez	v0,bfc01358 <main+0x31c>
+bfc01370:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:69
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000070; // Ascii p in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000067; // Ascii g in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000061; // Ascii a in transmit
+bfc01374:	ac680000 	sw	t0,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc01378:	afa00008 	sw	zero,8(sp)
+bfc0137c:	8fa20008 	lw	v0,8(sp)
+bfc01380:	2c422710 	sltiu	v0,v0,10000
+bfc01384:	10400008 	beqz	v0,bfc013a8 <main+0x36c>
+bfc01388:	00000000 	nop
+bfc0138c:	8fa20008 	lw	v0,8(sp)
+bfc01390:	24420001 	addiu	v0,v0,1
+bfc01394:	afa20008 	sw	v0,8(sp)
+bfc01398:	8fa20008 	lw	v0,8(sp)
+bfc0139c:	2c422710 	sltiu	v0,v0,10000
+bfc013a0:	1440fffa 	bnez	v0,bfc0138c <main+0x350>
+bfc013a4:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:71
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000067; // Ascii g in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000061; // Ascii a in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+bfc013a8:	ac650000 	sw	a1,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc013ac:	afa00004 	sw	zero,4(sp)
+bfc013b0:	8fa20004 	lw	v0,4(sp)
+bfc013b4:	2c422710 	sltiu	v0,v0,10000
+bfc013b8:	10400008 	beqz	v0,bfc013dc <main+0x3a0>
+bfc013bc:	00000000 	nop
+bfc013c0:	8fa20004 	lw	v0,4(sp)
+bfc013c4:	24420001 	addiu	v0,v0,1
+bfc013c8:	afa20004 	sw	v0,4(sp)
+bfc013cc:	8fa20004 	lw	v0,4(sp)
+bfc013d0:	2c422710 	sltiu	v0,v0,10000
+bfc013d4:	1440fffa 	bnez	v0,bfc013c0 <main+0x384>
+bfc013d8:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:73
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x00000061; // Ascii a in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+bfc013dc:	ac640000 	sw	a0,0(v1)
+delay():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:96
+}
+
+void delay() {
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++) ;	// delay 
+bfc013e0:	afa00000 	sw	zero,0(sp)
+bfc013e4:	8fa20000 	lw	v0,0(sp)
+bfc013e8:	2c422710 	sltiu	v0,v0,10000
+bfc013ec:	10400008 	beqz	v0,bfc01410 <main+0x3d4>
+bfc013f0:	00000000 	nop
+bfc013f4:	8fa20000 	lw	v0,0(sp)
+bfc013f8:	24420001 	addiu	v0,v0,1
+bfc013fc:	afa20000 	sw	v0,0(sp)
+bfc01400:	8fa20000 	lw	v0,0(sp)
+bfc01404:	2c422710 	sltiu	v0,v0,10000
+bfc01408:	1440fffa 	bnez	v0,bfc013f4 <main+0x3b8>
+bfc0140c:	00000000 	nop
+main():
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:76
+		*WRITE_IO(UART_BASE + thr) = 0x0000000a; // Ascii \n in transmit
+		delay();
+		*WRITE_IO(UART_BASE + thr) = 0x0000000d; // Ascii \r in transmit
+		delay();
+
+		*WRITE_IO(IO_LEDR) = count;
+bfc01410:	8fa20048 	lw	v0,72(sp)
+bfc01414:	ace20000 	sw	v0,0(a3)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:78
+
+		if (j == 1) {
+bfc01418:	8fa20044 	lw	v0,68(sp)
+bfc0141c:	1046000c 	beq	v0,a2,bfc01450 <main+0x414>
+bfc01420:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:83
+		    count = count << 1;
+		    if (count == 0xf000)
+		        j = 0;
+		} else {
+				count = count >> 1;
+bfc01424:	8fa20048 	lw	v0,72(sp)
+bfc01428:	00021042 	srl	v0,v0,0x1
+bfc0142c:	afa20048 	sw	v0,72(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:84
+		    if (count == 0x000f)
+bfc01430:	8fa20048 	lw	v0,72(sp)
+bfc01434:	10580003 	beq	v0,t8,bfc01444 <main+0x408>
+bfc01438:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:89
+		        j = 1;
+		}
+
+		inline_assembly();	  
+	}
+bfc0143c:	1000ff58 	b	bfc011a0 <main+0x164>
+bfc01440:	34001234 	li	zero,0x1234
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:85
+		    if (count == 0xf000)
+		        j = 0;
+		} else {
+				count = count >> 1;
+		    if (count == 0x000f)
+		        j = 1;
+bfc01444:	afa60044 	sw	a2,68(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:88
+		}
+
+		inline_assembly();	  
+bfc01448:	1000ff55 	b	bfc011a0 <main+0x164>
+bfc0144c:	34001234 	li	zero,0x1234
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:79
+		delay();
+
+		*WRITE_IO(IO_LEDR) = count;
+
+		if (j == 1) {
+		    count = count << 1;
+bfc01450:	8fa20048 	lw	v0,72(sp)
+bfc01454:	00021040 	sll	v0,v0,0x1
+bfc01458:	afa20048 	sw	v0,72(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:80
+		    if (count == 0xf000)
+bfc0145c:	8fa20048 	lw	v0,72(sp)
+bfc01460:	1459fff6 	bne	v0,t9,bfc0143c <main+0x400>
+bfc01464:	00000000 	nop
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:81
+		        j = 0;
+bfc01468:	afa00044 	sw	zero,68(sp)
+D:\Peripheral_Interface_lab-master\MIPSfpga_uart_C/main.c:88
+				count = count >> 1;
+		    if (count == 0x000f)
+		        j = 1;
+		}
+
+		inline_assembly();	  
+bfc0146c:	1000ff4c 	b	bfc011a0 <main+0x164>
+bfc01470:	34001234 	li	zero,0x1234
+bfc01474:	00000000 	nop

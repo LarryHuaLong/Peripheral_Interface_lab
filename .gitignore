@@ -6,3 +6,9 @@ MIPSfpga_axi4/MIPSfpga_axi4.hw/
 MIPSfpga_axi4/MIPSfpga_axi4.runs/
 MIPSfpga_axi4/MIPSfpga_axi4.sim/
 MIPSfpga_axi4/MIPSfpga_axi4.cache/
+MIPSfpga_axi4/*.log
+
+MIPSfpga_axi4/*.jou
+MIPSfpga_axi4/*.str
+
+MIPSfpga_axi4/.Xil
