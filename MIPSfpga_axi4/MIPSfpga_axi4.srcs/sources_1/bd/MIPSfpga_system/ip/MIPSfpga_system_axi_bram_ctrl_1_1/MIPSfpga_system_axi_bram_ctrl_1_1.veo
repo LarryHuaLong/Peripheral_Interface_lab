@@ -58,7 +58,7 @@ MIPSfpga_system_axi_bram_ctrl_1_1 your_instance_name (
   .s_axi_aclk(s_axi_aclk),        // input wire s_axi_aclk
   .s_axi_aresetn(s_axi_aresetn),  // input wire s_axi_aresetn
   .s_axi_awid(s_axi_awid),        // input wire [3 : 0] s_axi_awid
-  .s_axi_awaddr(s_axi_awaddr),    // input wire [15 : 0] s_axi_awaddr
+  .s_axi_awaddr(s_axi_awaddr),    // input wire [12 : 0] s_axi_awaddr
   .s_axi_awlen(s_axi_awlen),      // input wire [7 : 0] s_axi_awlen
   .s_axi_awsize(s_axi_awsize),    // input wire [2 : 0] s_axi_awsize
   .s_axi_awburst(s_axi_awburst),  // input wire [1 : 0] s_axi_awburst
@@ -77,7 +77,7 @@ MIPSfpga_system_axi_bram_ctrl_1_1 your_instance_name (
   .s_axi_bvalid(s_axi_bvalid),    // output wire s_axi_bvalid
   .s_axi_bready(s_axi_bready),    // input wire s_axi_bready
   .s_axi_arid(s_axi_arid),        // input wire [3 : 0] s_axi_arid
-  .s_axi_araddr(s_axi_araddr),    // input wire [15 : 0] s_axi_araddr
+  .s_axi_araddr(s_axi_araddr),    // input wire [12 : 0] s_axi_araddr
   .s_axi_arlen(s_axi_arlen),      // input wire [7 : 0] s_axi_arlen
   .s_axi_arsize(s_axi_arsize),    // input wire [2 : 0] s_axi_arsize
   .s_axi_arburst(s_axi_arburst),  // input wire [1 : 0] s_axi_arburst
@@ -96,7 +96,7 @@ MIPSfpga_system_axi_bram_ctrl_1_1 your_instance_name (
   .bram_clk_a(bram_clk_a),        // output wire bram_clk_a
   .bram_en_a(bram_en_a),          // output wire bram_en_a
   .bram_we_a(bram_we_a),          // output wire [3 : 0] bram_we_a
-  .bram_addr_a(bram_addr_a),      // output wire [15 : 0] bram_addr_a
+  .bram_addr_a(bram_addr_a),      // output wire [12 : 0] bram_addr_a
   .bram_wrdata_a(bram_wrdata_a),  // output wire [31 : 0] bram_wrdata_a
   .bram_rddata_a(bram_rddata_a)  // input wire [31 : 0] bram_rddata_a
 );

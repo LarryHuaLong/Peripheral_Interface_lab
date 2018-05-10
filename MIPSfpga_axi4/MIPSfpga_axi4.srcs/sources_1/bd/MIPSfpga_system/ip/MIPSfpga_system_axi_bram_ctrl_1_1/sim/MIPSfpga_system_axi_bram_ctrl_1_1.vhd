@@ -61,7 +61,7 @@ ENTITY MIPSfpga_system_axi_bram_ctrl_1_1 IS
     s_axi_aclk : IN STD_LOGIC;
     s_axi_aresetn : IN STD_LOGIC;
     s_axi_awid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_awaddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    s_axi_awaddr : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
     s_axi_awlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s_axi_awsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s_axi_awburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -80,7 +80,7 @@ ENTITY MIPSfpga_system_axi_bram_ctrl_1_1 IS
     s_axi_bvalid : OUT STD_LOGIC;
     s_axi_bready : IN STD_LOGIC;
     s_axi_arid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_araddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    s_axi_araddr : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
     s_axi_arlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s_axi_arsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s_axi_arburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -99,7 +99,7 @@ ENTITY MIPSfpga_system_axi_bram_ctrl_1_1 IS
     bram_clk_a : OUT STD_LOGIC;
     bram_en_a : OUT STD_LOGIC;
     bram_we_a : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    bram_addr_a : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    bram_addr_a : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
     bram_wrdata_a : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     bram_rddata_a : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
@@ -134,7 +134,7 @@ ARCHITECTURE MIPSfpga_system_axi_bram_ctrl_1_1_arch OF MIPSfpga_system_axi_bram_
       ecc_interrupt : OUT STD_LOGIC;
       ecc_ue : OUT STD_LOGIC;
       s_axi_awid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_awaddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      s_axi_awaddr : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
       s_axi_awlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       s_axi_awsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s_axi_awburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -153,7 +153,7 @@ ARCHITECTURE MIPSfpga_system_axi_bram_ctrl_1_1_arch OF MIPSfpga_system_axi_bram_
       s_axi_bvalid : OUT STD_LOGIC;
       s_axi_bready : IN STD_LOGIC;
       s_axi_arid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_araddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      s_axi_araddr : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
       s_axi_arlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       s_axi_arsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s_axi_arburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -188,14 +188,14 @@ ARCHITECTURE MIPSfpga_system_axi_bram_ctrl_1_1_arch OF MIPSfpga_system_axi_bram_
       bram_clk_a : OUT STD_LOGIC;
       bram_en_a : OUT STD_LOGIC;
       bram_we_a : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      bram_addr_a : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      bram_addr_a : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
       bram_wrdata_a : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       bram_rddata_a : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       bram_rst_b : OUT STD_LOGIC;
       bram_clk_b : OUT STD_LOGIC;
       bram_en_b : OUT STD_LOGIC;
       bram_we_b : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      bram_addr_b : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      bram_addr_b : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
       bram_wrdata_b : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       bram_rddata_b : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
@@ -249,9 +249,9 @@ BEGIN
   U0 : axi_bram_ctrl
     GENERIC MAP (
       C_BRAM_INST_MODE => "EXTERNAL",
-      C_MEMORY_DEPTH => 16384,
-      C_BRAM_ADDR_WIDTH => 14,
-      C_S_AXI_ADDR_WIDTH => 16,
+      C_MEMORY_DEPTH => 2048,
+      C_BRAM_ADDR_WIDTH => 11,
+      C_S_AXI_ADDR_WIDTH => 13,
       C_S_AXI_DATA_WIDTH => 32,
       C_S_AXI_ID_WIDTH => 4,
       C_S_AXI_PROTOCOL => "AXI4",
