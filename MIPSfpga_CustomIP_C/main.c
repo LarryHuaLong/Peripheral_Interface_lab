@@ -52,6 +52,8 @@ int main() {
 	delay();
 	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
 	delay();
+	*WRITE_IO(PWM_BASE) = 0;
+	delay();
 		
 	//*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 	//delay();
@@ -82,19 +84,23 @@ int main() {
 		i = 8;
         while(i--){
 			value = uart_inbyte();
+			*WRITE_IO(UART_BASE + thr) = (unsigned int) value;
 			if(value>='0'&&value<='9'){
-				num1 = num1 << 4;
-				num1 = num1 | (int)(value-'0');
+				num1 = num1 *10 + (value-'0');
+				*WRITE_IO(PWM_BASE) = num1;
 				continue;
 			}
 			else if (value=='+'||value=='-'||value=='*'||value=='/'){
 				op = value;
+			*WRITE_IO(UART_BASE + thr) = (unsigned int) value;
+				
 				break;
 			}
 		}
 		if(!op){
 			uart_print("input op:\n\r");
 			value = uart_inbyte();
+			*WRITE_IO(UART_BASE + thr) = (unsigned int) value;
 			if (value=='+'||value=='-'||value=='*'||value=='/')
 				op = (int)value;
 			else {
@@ -106,9 +112,10 @@ int main() {
 		i = 8;
         while(i--){
 			value = uart_inbyte();
+			*WRITE_IO(UART_BASE + thr) = (unsigned int) value;
 			if(value>='0'&&value<='9'){
-				num2 = num2 << 4;
-				num2 = num2 | (int) (value-'0');
+				num2 = num2 *10 + (value-'0');
+				*WRITE_IO(PWM_BASE) = num1;
 				continue;
 			}
 			else 
@@ -128,21 +135,25 @@ int main() {
 				uart_print("error~\n\r");
 			break;
 		}
-        
+        *WRITE_IO(PWM_BASE) = result;
+		
+        delay( );
+
         uart_print("result is: ");
-		*WRITE_IO(UART_BASE + thr) = result;
+		char buf[20] = "                  ";
+		int temp = result;
+		i = 1;
+		buf[20]='\0';
+		buf[20-i]=(char)(temp%10)+'0';
+		while(temp/=10){
+			i++;
+			buf[20-i]=(char)(temp%10)+'0';
+		}
+		uart_print(buf);
 		delay( );
         uart_print("\n\r");
 
-        /* Since the LED width is 1e6 clk cycles, we need to normalize
-         * the period to that clk.  Since we accept values 0-9, that will
-         * scale period from 0-999,000.  0 turns off LEDs, 999,000 is full brightness. */
-
-        /* Write the duty_cycle width (Period) out to the PL PWM peripheral. */
-		*WRITE_IO(PWM_BASE) = result;
-		
-        delay( );
-		// End of PWM IP test
+        
 	}
 	
 	return 0;

@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed May 23 19:06:12 2018
+# Process ID: 3768
+# Log file: D:/Peripheral_Interface_lab/ip_repo/vivado.log
+# Journal file: D:/Peripheral_Interface_lab/ip_repo\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Peripheral_Interface_lab/ip_repo/edit_segment_v1_0.xpr
+ipx::open_ipxact_file D:/Peripheral_Interface_lab/ip_repo/segment_1.0/component.xml
+ipx::unload_core d:/Peripheral_Interface_lab/ip_repo/segment_1.0/component.xml
+ipx::open_ipxact_file D:/Peripheral_Interface_lab/ip_repo/segment_1.0/component.xml
+launch_runs synth_1
+wait_on_run synth_1
+ipx::unload_core d:/Peripheral_Interface_lab/ip_repo/segment_1.0/component.xml
+ipx::open_ipxact_file D:/Peripheral_Interface_lab/ip_repo/segment_1.0/component.xml
+set_property value 250000 [ipx::get_user_parameters divider_count -of_objects [ipx::current_core]]
+set_property value 250000 [ipx::get_hdl_parameters divider_count -of_objects [ipx::current_core]]
+ipgui::add_param -name {divider_count} -component [ipx::current_core] -display_name {Divider Count} -show_label {true} -show_range {true} -widget {textEdit}
+set_property core_revision 7 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/Peripheral_Interface_lab/ip_repo/segment_1.0
+set_property core_revision 8 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/Peripheral_Interface_lab/ip_repo/segment_1.0
