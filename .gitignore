@@ -7,15 +7,21 @@ MIPSfpga_axi4/MIPSfpga_axi4.runs/
 MIPSfpga_axi4/MIPSfpga_axi4.sim/
 MIPSfpga_axi4/MIPSfpga_axi4.cache/
 MIPSfpga_axi4/*.log
-
 MIPSfpga_axi4/*.jou
 MIPSfpga_axi4/*.str
+MIPSfpga_axi4/.Xil
 
-MIPSfpga_axi4/.Xil
 ip_repo/edit_segment_v1_0.hw/
-MIPSfpga_axi4/.Xil
 ip_repo/edit_segment_v1_0.cache/
-MIPSfpga_axi4/.Xil
 ip_repo/edit_segment_v1_0.sim/
 
 ip_repo/edit_segment_v1_0.runs/
+
+MIPSfpga_interrupt/MIPSfpga_axi4.hw/
+MIPSfpga_interrupt/MIPSfpga_axi4.runs/
+MIPSfpga_interrupt/MIPSfpga_axi4.sim/
+MIPSfpga_interrupt/MIPSfpga_axi4.cache/
+MIPSfpga_interrupt/*.log
+MIPSfpga_interrupt/*.jou
+MIPSfpga_interrupt/*.str
+MIPSfpga_interrupt/.Xil
