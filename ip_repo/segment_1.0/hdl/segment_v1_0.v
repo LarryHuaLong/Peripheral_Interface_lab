@@ -4,7 +4,7 @@
 	module segment_v1_0 #
 	(
 		// Users to add parameters here
-	parameter integer divider_count = 20,
+	parameter integer divider_count = 250000,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 	
