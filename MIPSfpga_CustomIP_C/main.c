@@ -38,7 +38,7 @@ void uart_print(const char *ptr);
 //------------------
 int main() {
 	volatile unsigned int pushbutton, count = 0xF;
-	volatile unsigned int j = 1;
+	volatile unsigned int j = 1,i = 1;
 	unsigned int value = 0;
 	unsigned int period = 0;
 
@@ -73,20 +73,64 @@ int main() {
 		inline_assembly();	  	
 		// End of LEDs display
 		
-		
 		// PWM IP test
 		/* Prompt the user to select a brightness value ranging from  0 to 9. */
-		uart_print("Select a Brightness between 0 and 9\n\r");
-
+		uart_print("input num1:\n\r");
+		int num1=0,num2=0;
+		char op = 0;
         /* Read an input value from the console. */
-        value = uart_inbyte();
-
-        /* Convert the input ASCII character to an integer value. */
-        period = value - 0x30;
-
-        /* Print the input value back to the console to provide some feedback to the user. */
-        uart_print("Brightness Level selected is: ");
-		*WRITE_IO(UART_BASE + thr) = value;
+		i = 8;
+        while(i--){
+			value = uart_inbyte();
+			if(value>='0'&&value<='9'){
+				num1 = num1 << 4;
+				num1 = num1 | (int)(value-'0');
+				continue;
+			}
+			else if (value=='+'||value=='-'||value=='*'||value=='/'){
+				op = value;
+				break;
+			}
+		}
+		if(!op){
+			uart_print("input op:\n\r");
+			value = uart_inbyte();
+			if (value=='+'||value=='-'||value=='*'||value=='/')
+				op = (int)value;
+			else {
+				uart_print("error!\n\r");
+				continue;
+			}
+		}
+		uart_print("input num2:\n\r");
+		i = 8;
+        while(i--){
+			value = uart_inbyte();
+			if(value>='0'&&value<='9'){
+				num2 = num2 << 4;
+				num2 = num2 | (int) (value-'0');
+				continue;
+			}
+			else 
+				break;
+		}
+		int result;
+		switch(op){
+			case '+':result = num1+num2;
+			break;
+			case '-':result = num1-num2;
+			break;
+			case '*':result = num1*num2;
+			break;
+			case '/':result = num1/num2;
+			break;
+			default :
+				uart_print("error~\n\r");
+			break;
+		}
+        
+        uart_print("result is: ");
+		*WRITE_IO(UART_BASE + thr) = result;
 		delay( );
         uart_print("\n\r");
 
@@ -95,7 +139,7 @@ int main() {
          * scale period from 0-999,000.  0 turns off LEDs, 999,000 is full brightness. */
 
         /* Write the duty_cycle width (Period) out to the PL PWM peripheral. */
-		*WRITE_IO(PWM_BASE) = period * 110000;
+		*WRITE_IO(PWM_BASE) = result;
 		
         delay( );
 		// End of PWM IP test

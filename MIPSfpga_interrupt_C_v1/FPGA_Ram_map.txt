@@ -1,0 +1,149 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 main.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 main.o
+ .reginfo       0x0000000000000000       0x18 boot.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 boot.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD main.o
+
+.text_init      0x00000000bfc00000      0x778
+                0x00000000bfc00000                _ftext_init = ABSOLUTE (.)
+ boot.o(.text)
+ .text          0x00000000bfc00000      0x778 boot.o
+                0x00000000bfc00000                __reset_vector
+                0x00000000bfc00014                __cpu_init
+                0x00000000bfc00060                init_icache
+                0x00000000bfc000b8                init_dcache
+                0x00000000bfc00118                change_k0_cca
+                0x00000000bfc0031c                init_tlb
+                0x00000000bfc0049c                init_cp0
+                0x00000000bfc00508                _start
+                0x00000000bfc005c4                __exception_entry
+                0x00000000bfc00778                . = ALIGN (0x8)
+                0x00000000bfc00778                _etext_init = ABSOLUTE (.)
+
+.text_ram       0x00000000a0001000      0x6b8
+                0x00000000a0001000                _ftext_ram = ABSOLUTE (.)
+ *(.text)
+ .text          0x00000000a0001000      0x370 main.o
+                0x00000000a0001000                delay
+                0x00000000a000103c                uart_outbyte
+                0x00000000a0001084                uart_inbyte
+                0x00000000a00010a4                uart_print
+                0x00000000a0001104                reverse
+                0x00000000a0001164                my_itoa
+                0x00000000a0001238                _mips_handle_irq
+ *(.text.*)
+ .text.startup  0x00000000a0001370      0x300 main.o
+                0x00000000a0001370                main
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.str1.4
+                0x00000000a0001670       0x48 main.o
+                0x00000000a00016b8                . = ALIGN (0x8)
+                0x00000000a00016b8                _etext_ram = ABSOLUTE (.)
+
+.data           0x00000000a00016b8        0x8
+                0x00000000a00016b8                _fdata_ram = ABSOLUTE (.)
+ *(.data)
+ .data          0x00000000a00016b8        0x0 main.o
+ .data          0x00000000a00016b8        0x0 boot.o
+                0x00000000a00016b8                . = ALIGN (0x8)
+                0x00000000a00096b8                _gp = ABSOLUTE ((. + 0x8000))
+ *(.lit8)
+ *(.lit4)
+ *(.sdata)
+ .sdata         0x00000000a00016b8        0x4 main.o
+                0x00000000a00016b8                promt
+                0x00000000a00016c0                . = ALIGN (0x8)
+ *fill*         0x00000000a00016bc        0x4 
+                0x00000000a00016c0                _edata_ram = ABSOLUTE (.)
+                0x00000000a00016c0                _fbss = .
+
+.sbss           0x00000000a00016c0        0x8
+ *(.sbss)
+ .sbss          0x00000000a00016c0        0x8 main.o
+                0x00000000a00016c0                data_received
+                0x00000000a00016c4                rxData
+ *(.scommon)
+
+.bss            0x00000000a00016c8       0x64
+ *(.bss)
+ .bss           0x00000000a00016c8       0x64 main.o
+ .bss           0x00000000a000172c        0x0 boot.o
+ *(COMMON)
+                0x00000000a000172c                _end = .
+
+.gptab.sdata
+ *(.gptab.data)
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+
+/DISCARD/
+ *(.reginfo)
+ *(.MIPS.abiflags)
+                0x00000000a000172c                _freemem = .
+OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
+
+.pdr            0x0000000000000000      0x220
+ .pdr           0x0000000000000000      0x100 main.o
+ .pdr           0x0000000000000100      0x120 boot.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x43
+ .comment       0x0000000000000000       0x43 main.o
+                                         0x44 (size before relaxing)
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 main.o
+ .gnu.attributes
+                0x0000000000000010       0x10 boot.o
+
+.debug_info     0x0000000000000000      0x678
+ .debug_info    0x0000000000000000      0x60c main.o
+ .debug_info    0x000000000000060c       0x6c boot.o
+
+.debug_abbrev   0x0000000000000000      0x226
+ .debug_abbrev  0x0000000000000000      0x212 main.o
+ .debug_abbrev  0x0000000000000212       0x14 boot.o
+
+.debug_loc      0x0000000000000000      0x2aa
+ .debug_loc     0x0000000000000000      0x2aa main.o
+
+.debug_aranges  0x0000000000000000       0x48
+ .debug_aranges
+                0x0000000000000000       0x28 main.o
+ .debug_aranges
+                0x0000000000000028       0x20 boot.o
+
+.debug_ranges   0x0000000000000000       0x80
+ .debug_ranges  0x0000000000000000       0x80 main.o
+
+.debug_line     0x0000000000000000      0x361
+ .debug_line    0x0000000000000000      0x163 main.o
+ .debug_line    0x0000000000000163      0x1fe boot.o
+
+.debug_str      0x0000000000000000      0x1a7
+ .debug_str     0x0000000000000000      0x1a7 main.o
+                                        0x1e0 (size before relaxing)
+
+.debug_frame    0x0000000000000000       0xcc
+ .debug_frame   0x0000000000000000       0xcc main.o

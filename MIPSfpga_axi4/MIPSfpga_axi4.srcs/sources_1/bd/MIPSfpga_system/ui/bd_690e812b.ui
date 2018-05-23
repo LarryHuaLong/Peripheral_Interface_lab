@@ -14,7 +14,6 @@ preplace port JB8 -pg 1 -y 200 -defaultsOSRD
 preplace portBus an -pg 1 -y 1190 -defaultsOSRD
 preplace portBus seg -pg 1 -y 1210 -defaultsOSRD
 preplace portBus LED -pg 1 -y 390 -defaultsOSRD
-preplace portBus PWMs -pg 1 -y 740 -defaultsOSRD
 preplace portBus SW -pg 1 -y 640 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 2 -y 200 -defaultsOSRD
 preplace inst xlconstant_1 -pg 1 -lvl 1 -y 280 -defaultsOSRD

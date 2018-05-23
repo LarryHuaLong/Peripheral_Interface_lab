@@ -1,8 +1,8 @@
 //Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-//Date        : Thu May 10 11:28:06 2018
-//Host        : DESKTOP-LARRY running 64-bit major release  (build 9200)
+//Date        : Wed May 23 20:14:46 2018
+//Host        : Hust007 running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target MIPSfpga_system_wrapper.bd
 //Design      : MIPSfpga_system_wrapper
 //Purpose     : IP block netlist
@@ -19,10 +19,11 @@ module MIPSfpga_system_wrapper
     JB7,
     JB8,
     LED,
-    PWMs,
     SW,
     UART_RXD_OUT,
-    UART_TXD_IN);
+    UART_TXD_IN,
+    an,
+    seg);
   input CLK100MHZ;
   input CPU_RESETN;
   input JB1;
@@ -32,10 +33,11 @@ module MIPSfpga_system_wrapper
   input JB7;
   input JB8;
   output [15:0]LED;
-  output [1:0]PWMs;
   input [15:0]SW;
   output UART_RXD_OUT;
   input UART_TXD_IN;
+  output [7:0]an;
+  output [7:0]seg;
 
   wire CLK100MHZ;
   wire CPU_RESETN;
@@ -46,10 +48,11 @@ module MIPSfpga_system_wrapper
   wire JB7;
   wire JB8;
   wire [15:0]LED;
-  wire [1:0]PWMs;
   wire [15:0]SW;
   wire UART_RXD_OUT;
   wire UART_TXD_IN;
+  wire [7:0]an;
+  wire [7:0]seg;
 
   MIPSfpga_system MIPSfpga_system_i
        (.CLK100MHZ(CLK100MHZ),
@@ -61,8 +64,9 @@ module MIPSfpga_system_wrapper
         .JB7(JB7),
         .JB8(JB8),
         .LED(LED),
-        .PWMs(PWMs),
         .SW(SW),
         .UART_RXD_OUT(UART_RXD_OUT),
-        .UART_TXD_IN(UART_TXD_IN));
+        .UART_TXD_IN(UART_TXD_IN),
+        .an(an),
+        .seg(seg));
 endmodule

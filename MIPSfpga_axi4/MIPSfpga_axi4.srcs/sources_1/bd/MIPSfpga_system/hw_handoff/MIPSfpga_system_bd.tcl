@@ -154,16 +154,14 @@ proc create_root_design { parentCell } {
   set JB7 [ create_bd_port -dir I JB7 ]
   set JB8 [ create_bd_port -dir I JB8 ]
   set LED [ create_bd_port -dir O -from 15 -to 0 LED ]
-  set PWMs [ create_bd_port -dir O -from 1 -to 0 PWMs ]
   set SW [ create_bd_port -dir I -from 15 -to 0 SW ]
   set UART_RXD_OUT [ create_bd_port -dir O UART_RXD_OUT ]
   set UART_TXD_IN [ create_bd_port -dir I UART_TXD_IN ]
+  set an [ create_bd_port -dir O -from 7 -to 0 an ]
+  set seg [ create_bd_port -dir O -from 7 -to 0 seg ]
 
   # Create instance: MIPS_MicroAptiv_UP_0, and set properties
   set MIPS_MicroAptiv_UP_0 [ create_bd_cell -type ip -vlnv imgtec.org:user:MIPS_MicroAptiv_UP:1.3.1 MIPS_MicroAptiv_UP_0 ]
-
-  # Create instance: PWM_w_Int_0, and set properties
-  set PWM_w_Int_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:PWM_w_Int:1.1 PWM_w_Int_0 ]
 
   # Create instance: ahblite_axi_bridge_0, and set properties
   set ahblite_axi_bridge_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ahblite_axi_bridge:3.0 ahblite_axi_bridge_0 ]
@@ -183,7 +181,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
-  set_property -dict [ list CONFIG.NUM_MI {5}  ] $axi_interconnect_0
+  set_property -dict [ list CONFIG.NUM_MI {6}  ] $axi_interconnect_0
 
   # Create instance: axi_uart16550_0, and set properties
   set axi_uart16550_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uart16550:2.0 axi_uart16550_0 ]
@@ -199,6 +197,9 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.1 clk_wiz_0 ]
   set_property -dict [ list CONFIG.CLKOUT1_DRIVES {BUFG} CONFIG.CLKOUT1_JITTER {167.017} CONFIG.CLKOUT1_PHASE_ERROR {114.212} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT2_DRIVES {BUFG} CONFIG.CLKOUT3_DRIVES {BUFG} CONFIG.CLKOUT4_DRIVES {BUFG} CONFIG.CLKOUT5_DRIVES {BUFG} CONFIG.CLKOUT6_DRIVES {BUFG} CONFIG.CLKOUT7_DRIVES {BUFG} CONFIG.MMCM_CLKFBOUT_MULT_F {8} CONFIG.MMCM_CLKOUT0_DIVIDE_F {16} CONFIG.MMCM_COMPENSATION {ZHOLD} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.PRIMITIVE {PLL} CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false}  ] $clk_wiz_0
+
+  # Create instance: segment_0, and set properties
+  set segment_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:segment:1.0 segment_0 ]
 
   # Create instance: util_ds_buf_0, and set properties
   set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_0 ]
@@ -236,7 +237,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins axi_uart16550_0/S_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins axi_bram_ctrl_1/S_AXI] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins PWM_w_Int_0/S00_AXI] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins axi_interconnect_0/M05_AXI] [get_bd_intf_pins segment_0/S00_AXI]
 
   # Create port connections
   connect_bd_net -net EJ_TCK_1 [get_bd_ports JB4] [get_bd_pins util_ds_buf_0/BUFG_I]
@@ -244,9 +245,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net EJ_TMS_1 [get_bd_ports JB1] [get_bd_pins MIPS_MicroAptiv_UP_0/EJ_TMS]
   connect_bd_net -net EJ_TRST_N_1 [get_bd_ports JB7] [get_bd_pins MIPS_MicroAptiv_UP_0/EJ_TRST_N]
   connect_bd_net -net MIPS_MicroAptiv_UP_0_EJ_TDO [get_bd_ports JB3] [get_bd_pins MIPS_MicroAptiv_UP_0/EJ_TDO]
-  connect_bd_net -net MIPS_MicroAptiv_UP_0_HCLK [get_bd_pins MIPS_MicroAptiv_UP_0/HCLK] [get_bd_pins PWM_w_Int_0/s00_axi_aclk] [get_bd_pins ahblite_axi_bridge_0/s_ahb_hclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_bram_ctrl_1/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_uart16550_0/s_axi_aclk]
-  connect_bd_net -net MIPS_MicroAptiv_UP_0_HRESETn [get_bd_pins MIPS_MicroAptiv_UP_0/HRESETn] [get_bd_pins PWM_w_Int_0/s00_axi_aresetn] [get_bd_pins ahblite_axi_bridge_0/s_ahb_hresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_1/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_uart16550_0/s_axi_aresetn]
-  connect_bd_net -net PWM_w_Int_0_LEDs [get_bd_ports PWMs] [get_bd_pins PWM_w_Int_0/LEDs]
+  connect_bd_net -net MIPS_MicroAptiv_UP_0_HCLK [get_bd_pins MIPS_MicroAptiv_UP_0/HCLK] [get_bd_pins ahblite_axi_bridge_0/s_ahb_hclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_bram_ctrl_1/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_uart16550_0/s_axi_aclk] [get_bd_pins segment_0/s00_axi_aclk]
+  connect_bd_net -net MIPS_MicroAptiv_UP_0_HRESETn [get_bd_pins MIPS_MicroAptiv_UP_0/HRESETn] [get_bd_pins ahblite_axi_bridge_0/s_ahb_hresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_1/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_uart16550_0/s_axi_aresetn] [get_bd_pins segment_0/s00_axi_aresetn]
   connect_bd_net -net SI_ClkIn_1 [get_bd_ports CLK100MHZ] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net SI_ColdReset_1 [get_bd_ports JB8] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net SI_Reset_1 [get_bd_ports CPU_RESETN] [get_bd_pins util_vector_logic_1/Op1]
@@ -255,6 +255,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports LED] [get_bd_pins axi_gpio_0/gpio_io_o]
   connect_bd_net -net axi_uart16550_0_sout [get_bd_ports UART_RXD_OUT] [get_bd_pins axi_uart16550_0/sout]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins MIPS_MicroAptiv_UP_0/SI_ClkIn] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net segment_0_anodes [get_bd_ports an] [get_bd_pins segment_0/anodes]
+  connect_bd_net -net segment_0_cathodes [get_bd_ports seg] [get_bd_pins segment_0/cathodes]
   connect_bd_net -net sin_1 [get_bd_ports UART_TXD_IN] [get_bd_pins axi_uart16550_0/sin]
   connect_bd_net -net util_ds_buf_0_BUFG_O [get_bd_pins MIPS_MicroAptiv_UP_0/EJ_TCK] [get_bd_pins util_ds_buf_0/BUFG_O]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins MIPS_MicroAptiv_UP_0/SI_ColdReset] [get_bd_pins util_vector_logic_0/Res]
@@ -265,11 +267,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net xlconstant_3_dout [get_bd_pins axi_uart16550_0/freeze] [get_bd_pins xlconstant_3/dout]
 
   # Create address segments
-  create_bd_addr_seg -range 0x10000 -offset 0x10C00000 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs PWM_w_Int_0/S00_AXI/S00_AXI_reg] SEG_PWM_w_Int_0_S00_AXI_reg
   create_bd_addr_seg -range 0x2000 -offset 0x1FC00000 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
   create_bd_addr_seg -range 0x2000 -offset 0x0 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs axi_bram_ctrl_1/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
   create_bd_addr_seg -range 0x10000 -offset 0x10600000 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x10000 -offset 0x10400000 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs axi_uart16550_0/S_AXI/Reg] SEG_axi_uart16550_0_Reg
+  create_bd_addr_seg -range 0x10000 -offset 0x10C00000 [get_bd_addr_spaces MIPS_MicroAptiv_UP_0/ahblite] [get_bd_addr_segs segment_0/S00_AXI/S00_AXI_reg] SEG_segment_0_S00_AXI_reg
   
 
   # Restore current instance
