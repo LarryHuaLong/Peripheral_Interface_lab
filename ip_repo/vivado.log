@@ -22,3 +22,5 @@ WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Users/Hust/Docu
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
 open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 709.863 ; gain = 142.094
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 23 21:28:17 2018...

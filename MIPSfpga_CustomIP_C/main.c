@@ -32,7 +32,9 @@ void delay();
 void uart_outbyte(char c);
 char uart_inbyte(void);
 void uart_print(const char *ptr);
-
+int uart_printInt(int num);
+char* itoa(int num);
+int atoh(char*);
 //------------------
 // main()
 //------------------
@@ -115,7 +117,7 @@ int main() {
 			*WRITE_IO(UART_BASE + thr) = (unsigned int) value;
 			if(value>='0'&&value<='9'){
 				num2 = num2 *10 + (value-'0');
-				*WRITE_IO(PWM_BASE) = num1;
+				*WRITE_IO(PWM_BASE) = num2;
 				continue;
 			}
 			else 
@@ -140,16 +142,7 @@ int main() {
         delay( );
 
         uart_print("result is: ");
-		char buf[20] = "                  ";
-		int temp = result;
-		i = 1;
-		buf[20]='\0';
-		buf[20-i]=(char)(temp%10)+'0';
-		while(temp/=10){
-			i++;
-			buf[20-i]=(char)(temp%10)+'0';
-		}
-		uart_print(buf);
+		uart_print(itoa(result));
 		delay( );
         uart_print("\n\r");
 
@@ -186,5 +179,27 @@ void uart_print(const char *ptr)
 		uart_outbyte (*ptr);
 		ptr++;
 	}
+}
+char* itoa(int num){
+	static char buf[9] = "        ";
+	int temp = num;
+	int i = 1;
+	buf[8]='\0';
+	buf[8-i]=(char)(temp%10)+'0';
+	while(temp/=10){
+		i++;
+		buf[8-i]=(char)(temp%10)+'0';
+	}
+	return buf;
+}
+int atoi(const char* str){
+	int num = 0;
+	int i = 7;
+	while(i>0){
+		num += (str[i]-'0');
+		num *= 10;
+	}
+	num += str[0]-'0';
+	return num;
 }
 
