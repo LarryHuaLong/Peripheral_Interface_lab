@@ -25,3 +25,12 @@ MIPSfpga_interrupt/*.log
 MIPSfpga_interrupt/*.jou
 MIPSfpga_interrupt/*.str
 MIPSfpga_interrupt/.Xil
+
+MIPSfpga_ADT7420/MIPSfpga_axi4.hw/
+MIPSfpga_ADT7420/MIPSfpga_axi4.runs/
+MIPSfpga_ADT7420/MIPSfpga_axi4.sim/
+MIPSfpga_ADT7420/MIPSfpga_axi4.cache/
+MIPSfpga_ADT7420/*.log
+MIPSfpga_ADT7420/*.jou
+MIPSfpga_ADT7420/*.str
+MIPSfpga_ADT7420/.Xil
