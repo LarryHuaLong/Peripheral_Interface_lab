@@ -34,16 +34,29 @@ class App(QtWidgets.QWidget, Ui_MplMainWindow):
             print("faild to open serial port!\n")
         else:
             self.timer.start(1000)
+        self.data = list()
+    def plot(self):
+        self.mplfigure.canvas.ax.clear()
+        self.mplfigure.canvas.ax.plot(self.data, '*-')
+        self.mplfigure.canvas.draw()
 
     def read_data(self):
         text = self.serial.read_all()
         print(text)
         self.textEdit_log.insertPlainText(text.decode())
 
-        data = re.findall(r"T = (?P<temp>[0-9]*\.00) C", text.decode())
-        for t in data:
+        temp = re.findall(r"T = (?P<temp>[0-9]*\.00) C", text.decode())
+        temp = re.findall(
+            r"T = (?P<temp>[0-9]*\.00) C", "T = 5.00 C T = 10.00 C T = 20.00 C T = 40.00 C T = 60.00 C ")
+
+        for t in temp:
             print(float(t))
-            self.mplfigure
+            if len(self.data) >= 60:
+                del self.data[0]
+            self.data.append(float(t)+1.0)
+        self.mplfigure.canvas.ax.clear()
+        self.mplfigure.canvas.ax.plot(self.data, '*-')
+        self.mplfigure.canvas.draw()
 
     def setResolution(self):
         self.serial.write('r'.encode())
