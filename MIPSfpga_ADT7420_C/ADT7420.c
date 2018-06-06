@@ -1,4 +1,4 @@
-/***************************************************************************/ /**
+/***************************************************************************//**
 *   @file   ADT7420.c
 *   @brief  ADT7420 Driver Files for MicroBlaze Processor.
 *   @author ATofan (alexandru.tofan@analog.com)
@@ -49,62 +49,65 @@
 extern void uart_print(const char *ptr);
 extern char uart_inbyte(void);
 
-extern void intc_disable_interrupts();
-extern void intc_enable_interrupts();
+extern void intc_disable_interrupts( );
+extern void intc_enable_interrupts( );
+
 
 /*****************************************************************************/
 /********************** Variable Definitions *********************************/
 /*****************************************************************************/
 extern volatile int rxData;
-char valid = 0;
-int TUpper = 0x1FFF;
+char valid  = 0;
+int  TUpper = 0x1FFF;
 
-//反转字符串
-char *reverse(char *s)
-{
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
-		++q;
-	q--;
 
-	//交换移动指针，直到p和q交叉
-	while (q > p)
-	{
-		temp = *p;
-		*p++ = *q;
-		*q-- = temp;
-	}
-	return s;
-}
-
+//反转字符串  
+char *reverse(char *s)  
+{  
+    char temp;  
+    char *p = s;    //p指向s的头部  
+    char *q = s;    //q指向s的尾部  
+    while(*q)  
+        ++q;  
+    q--;  
+  
+    //交换移动指针，直到p和q交叉  
+    while(q > p)  
+    {  
+        temp = *p;  
+        *p++ = *q;  
+        *q-- = temp;  
+    }  
+    return s;  
+}  
+  
 /* 
  * 功能：整数转换为字符串 
  * char s[] 的作用是存储整数的每一位 
- */
-char *my_itoa(int n)
-{
-	int i = 0, isNegative = 0;
-	static char s[100];		  //必须为static变量，或者是全局变量
-	if ((isNegative = n) < 0) //如果是负数，先转为正数
-	{
-		n = -n;
-	}
-	do //从各位开始变为字符，直到最高位，最后应该反转
-	{
-		s[i++] = n % 10 + '0';
-		n = n / 10;
-	} while (n > 0);
+ */  
+char *my_itoa(int n)  
+{  
+    int i = 0,isNegative = 0;  
+    static char s[100];      //必须为static变量，或者是全局变量  
+    if((isNegative = n) < 0) //如果是负数，先转为正数  
+    {  
+        n = -n;  
+    }  
+    do      //从各位开始变为字符，直到最高位，最后应该反转  
+    {  
+        s[i++] = n%10 + '0';  
+        n = n/10;  
+    }while(n > 0);  
+  
+    if(isNegative < 0)   //如果是负数，补上负号  
+    {  
+        s[i++] = '-';  
+    }  
+    s[i] = '\0';    //最后加上字符串结束符  
+	
+    return reverse(s);    
+}  
 
-	if (isNegative < 0) //如果是负数，补上负号
-	{
-		s[i++] = '-';
-	}
-	s[i] = '\0'; //最后加上字符串结束符
-
-	return reverse(s);
-}
 
 /******************************************************************************
 * @brief Performs Software Reset for ADT7420 and sets Alert Mode as Comparator.
@@ -115,17 +118,17 @@ char *my_itoa(int n)
 ******************************************************************************/
 void ADT7420_Init(void)
 {
-	unsigned char txBuffer[1] = {0x00};
-
-	if (I2C_Init(IIC_BASEADDR, ADT7420_IIC_ADDR))
-	{
-		uart_print("AXI IIC initialized OK!\n\r");
-	}
-	else
-	{
-		uart_print("AXI IIC Error!\n\r");
-	}
-
+	unsigned char txBuffer[1] = { 0x00 };
+	
+	if(I2C_Init(IIC_BASEADDR, ADT7420_IIC_ADDR))
+    {
+        uart_print("AXI IIC initialized OK!\n\r");
+    }
+    else
+    {
+        uart_print("AXI IIC Error!\n\r");
+    }
+	
 	I2C_Write(IIC_BASEADDR, ADT7420_IIC_ADDR, SOFT_RST_REG, 1, txBuffer);
 
 	SetAlertModeComparator();
@@ -159,7 +162,7 @@ char ADT7420_ReadConfigReg(void)
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
-	return (rxBuffer[0] & 0x7F);
+	return(rxBuffer[0] & 0x7F);
 }
 
 /******************************************************************************
@@ -232,6 +235,7 @@ void ADT7420_DisplayMenu(void)
 	uart_print("	[s] Display Settings \n\r");
 	uart_print("	[m] Stop the program and display this menu\n\r");
 
+
 	rxData = 0;
 }
 
@@ -250,9 +254,9 @@ unsigned char ADT7420_GetResolution(char display)
 	unsigned char rxBuffer[2] = {0x00, 0x00};
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
-	if (display == 1)
+	if(display == 1)
 	{
-		if ((rxBuffer[0] & (1 << RESOLUTION)) == 0)
+		if((rxBuffer[0] & (1 << RESOLUTION)) == 0)
 		{
 			uart_print("Resolution is 13 bits (0.0625 C/LSB)\n\r");
 		}
@@ -290,8 +294,8 @@ void ADT7420_DisplayResolutionMenu(void)
 ******************************************************************************/
 void ADT7420_SetResolution(void)
 {
-	unsigned char txBuffer[1] = {0x00};
-	char rx = 0;
+	unsigned char txBuffer[1] = { 0x00 };
+	char          rx          = 0;
 
 	ADT7420_DisplayResolutionMenu();
 
@@ -300,25 +304,25 @@ void ADT7420_SetResolution(void)
 	rx = uart_inbyte();
 
 	switch (rx)
-	{
-	case '1':
-		txBuffer[0] = (0 << RESOLUTION) | ADT7420_ReadConfigReg(); // so as not to change other configuration parameters
-		uart_print("Resolution is 13 bits (0.0625 C/LSB)\n\r");
-		TUpper = 0x1FFF;
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	case '2':
-		txBuffer[0] = (1 << RESOLUTION) | ADT7420_ReadConfigReg();
-		uart_print("Resolution is 16 bits (0.0078 C/LSB)\n\r");
-		TUpper = 0xFFFF;
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	default:
-		uart_print("Wrong option!\n\r");
-		break;
-	}
+		{
+		case '1' :
+			txBuffer[0] = (0 << RESOLUTION) | ADT7420_ReadConfigReg() ; // so as not to change other configuration parameters
+			uart_print("Resolution is 13 bits (0.0625 C/LSB)\n\r");
+			TUpper = 0x1FFF;
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		case '2' :
+			txBuffer[0] = (1 << RESOLUTION) | ADT7420_ReadConfigReg();
+			uart_print("Resolution is 16 bits (0.0078 C/LSB)\n\r");
+			TUpper = 0xFFFF;
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		default:
+			uart_print("Wrong option!\n\r");
+			break;
+		}
 
 	I2C_Write(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, txBuffer);
 }
@@ -332,12 +336,12 @@ void ADT7420_SetResolution(void)
 ******************************************************************************/
 int ADT7420_ReadTemp(void)
 {
-	unsigned char rxBuffer[2] = {0x00, 0x00};
-	int data = 0;
+	unsigned char rxBuffer[2]  = {0x00,0x00};
+	int           data         = 0;
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, TEMP_REG, 2, rxBuffer);
 
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
 		data = (rxBuffer[0] << 5) | (rxBuffer[1] >> 3);
 	}
@@ -358,14 +362,14 @@ int ADT7420_ReadTemp(void)
 ******************************************************************************/
 void Display_Temp(short int data)
 {
-	int value = 0;
+	int     value     = 0;
 
 	// converting data for display
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
-		if (data & 0x1000)
+		if(data&0x1000)
 		{
-			data = data | 0xffffe000;
+			data = data	| 0xffffe000;
 		}
 		value = data / 16;
 	}
@@ -374,9 +378,9 @@ void Display_Temp(short int data)
 		value = data / 128;
 	}
 
-	if (value >= 0)
+	if(value >= 0)
 	{
-		uart_print("T = ");
+	    uart_print("T = ");
 		uart_print(my_itoa(value));
 		uart_print(".00 C\n\r");
 	}
@@ -399,39 +403,39 @@ void Display_Temp(short int data)
 ******************************************************************************/
 int ADT7420_ConsoleRead(void)
 {
-	char rx = 0;
-	char c[4] = "0000";
+	char rx    = 0;
+	char c[4]  = "0000";
 	char *c_ptr;
-	int i = 0;
-	char cnt = 0;
-	int value = 0;
+	int  i     = 0;
+	char cnt   = 0;
+	int  value = 0;
 
-	cnt = 0;
-	i = 0;
+	cnt   = 0;
+	i     = 0;
 	valid = 0;
 	value = 0;
 	c_ptr = c;
 
-	while (i < 6)
+	while(i < 6)
 	{
 		// Check if data is available on the UART
 		// Store and display received data
 		rx = uart_inbyte();
 		uart_print(my_itoa(rx));
-
+		
 		// Check if pressed key is [Enter]
-		if (rx == 0x0D)
+		if(rx == 0x0D)
 		{
 			i = 5;
 		}
-		else if (rx == 0x0A)
+		else if(rx == 0x0A)
 		{
 			i = 5;
 		}
-		else if (((rx > 0x00) && (rx < 0x30)) || // Not 0 - 9
-				 ((rx > 0x39) && (rx < 0x41)) || // Not A - F
-				 ((rx > 0x46) && (rx < 0x61)) || // Not a - f
-				 (rx > 0x66))
+		else if(((rx > 0x00)&&(rx < 0x30))|| // Not 0 - 9
+				((rx > 0x39)&&(rx < 0x41))|| // Not A - F
+				((rx > 0x46)&&(rx < 0x61))|| // Not a - f
+				(rx > 0x66))
 		{
 			uart_print("\n\rCharacters entered must be HEX values (0 to 9 and A B C D E F)\n\r");
 			i = 6;
@@ -443,7 +447,7 @@ int ADT7420_ConsoleRead(void)
 			cnt = cnt + 1;
 			valid = 1;
 		}
-		if (cnt == 4)
+		if(cnt == 4)
 		{
 			i = 6;
 		}
@@ -451,13 +455,13 @@ int ADT7420_ConsoleRead(void)
 	}
 
 	// Translate from ASCII to hex
-	for (i = 0; i < cnt; i++)
+	for(i = 0; i < cnt; i++)
 	{
-		if (c[i] > 0x60)
+		if(c[i] > 0x60)
 		{
 			value = value * 16 + (c[i] - 0x57);
 		}
-		else if (c[i] > 0x39)
+		else if(c[i] > 0x39)
 		{
 			value = value * 16 + (c[i] - 0x37);
 		}
@@ -467,7 +471,7 @@ int ADT7420_ConsoleRead(void)
 		}
 	}
 
-	if (valid == 1)
+	if(valid == 1)
 	{
 		return value;
 	}
@@ -495,14 +499,14 @@ void ADT7420_DisplaySetTHighMenu(void)
 
 	THigh = ADT7420_ConsoleRead();
 
-	while (!((THigh >= 0x0000) & (THigh <= 0x003C)))
+	while(!((THigh>=0x0000)&(THigh<=0x003C)))
 	{
 		uart_print("\n\rValue for THigh must be in the range 0x0000 and 0x003C\n\r");
 		uart_print("Please enter a valid value: 0x");
 		THigh = ADT7420_ConsoleRead();
 	}
 
-	if (valid == 1)
+	if(valid == 1)
 	{
 		ADT7420_SetTHigh(THigh);
 		rxData = 'm';
@@ -521,7 +525,7 @@ void ADT7420_SetTHigh(int THigh)
 {
 	unsigned char txBuffer[2] = {0x00, 0x00};
 
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
 		txBuffer[0] = (THigh & 0x1FE0) >> 5;
 		txBuffer[1] = (THigh & 0x001F) << 3;
@@ -545,12 +549,12 @@ void ADT7420_SetTHigh(int THigh)
 void ADT7420_PrintTHigh(void)
 {
 	unsigned char rxBuffer[2] = {0x00, 0x00};
-	int val = 0;
+	int           val         = 0;
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, TH_SETP_MSB, 2, rxBuffer);
 
-	if (ADT7420_GetResolution(0) == 0)
-		val = (rxBuffer[0] << 5) | (rxBuffer[1] >> 3);
+	if(ADT7420_GetResolution(0) == 0)
+		val = ( rxBuffer[0] << 5 ) | ( rxBuffer[1] >> 3);
 	else
 		val = (rxBuffer[0] << 8) | rxBuffer[1];
 
@@ -575,14 +579,14 @@ void ADT7420_DisplaySetTLowMenu(void)
 
 	TLow = ADT7420_ConsoleRead();
 
-	while (!((TLow >= 0x0000) & (TLow <= 0x000A)))
+	while(!((TLow>=0x0000)&(TLow<=0x000A)))
 	{
 		uart_print("\n\rValue for TLow must be in the range 0x0000 and 0x000A\n\r");
 		uart_print("Please enter a valid value: 0x");
 		TLow = ADT7420_ConsoleRead();
 	}
 
-	if (valid == 1)
+	if(valid == 1)
 	{
 		ADT7420_SetTLow(TLow);
 		rxData = 'm';
@@ -601,7 +605,7 @@ void ADT7420_SetTLow(int TLow)
 {
 	unsigned char txBuffer[2] = {0x00, 0x00};
 
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
 		txBuffer[0] = (TLow & 0x1FE0) >> 5;
 		txBuffer[1] = (TLow & 0x001F) << 3;
@@ -625,13 +629,13 @@ void ADT7420_SetTLow(int TLow)
 void ADT7420_PrintTLow(void)
 {
 	unsigned char rxBuffer[2] = {0x00, 0x00};
-	int val = 0;
+	int           val         = 0;
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, TL_SETP_MSB, 2, rxBuffer);
 
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
-		val = (rxBuffer[0] << 5) | (rxBuffer[1] >> 3);
+		val = ( rxBuffer[0] << 5 ) | ( rxBuffer[1] >> 3);
 	}
 	else
 	{
@@ -652,7 +656,7 @@ void ADT7420_PrintTLow(void)
 void ADT7420_SetTCrit(int TCrit)
 {
 	unsigned char txBuffer[2] = {0x00, 0x00};
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
 		txBuffer[0] = (TCrit & 0x1FE0) >> 5;
 		txBuffer[1] = (TCrit & 0x001F) << 3;
@@ -684,14 +688,14 @@ void ADT7420_DisplaySetTCritMenu(void)
 
 	TCrit = ADT7420_ConsoleRead();
 
-	while (!((TCrit >= 0x0000) & (TCrit <= 0x0064)))
+	while(!((TCrit>=0x0000)&(TCrit<=0x0064)))
 	{
 		uart_print("\n\rValue for TCrit must be in the range 0x0000 and 0x0064\n\r");
 		uart_print("Please enter a valid value: 0x");
 		TCrit = ADT7420_ConsoleRead();
 	}
 
-	if (valid == 1)
+	if(valid == 1)
 	{
 		ADT7420_SetTCrit(TCrit);
 		rxData = 'm';
@@ -709,13 +713,13 @@ void ADT7420_DisplaySetTCritMenu(void)
 void ADT7420_PrintTCrit(void)
 {
 	unsigned char rxBuffer[2] = {0x00, 0x00};
-	int val = 0;
+	int           val         = 0;
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, TCRIT_SETP_MSB, 2, rxBuffer);
 
-	if (ADT7420_GetResolution(0) == 0)
+	if(ADT7420_GetResolution(0) == 0)
 	{
-		val = (rxBuffer[0] << 5) | (rxBuffer[1] >> 3);
+		val = ( rxBuffer[0] << 5 ) | ( rxBuffer[1] >> 3);
 	}
 	else
 	{
@@ -743,14 +747,14 @@ void ADT7420_DisplaySetTHystMenu(void)
 
 	THyst = ADT7420_ConsoleRead();
 
-	while (!((THyst >= 0) & (THyst < 16)))
+	while(!((THyst>=0)&(THyst<16)))
 	{
 		uart_print("\n\rValue for THyst must be in the range 0 C to 15 C\n\r");
 		uart_print("Please enter a valid value: 0x");
 		THyst = ADT7420_ConsoleRead();
 	}
 
-	if (valid == 1)
+	if(valid == 1)
 	{
 		ADT7420_SetHysteresis(THyst);
 		rxData = 'm';
@@ -781,7 +785,7 @@ void ADT7420_SetHysteresis(int THyst)
 ******************************************************************************/
 void ADT7420_PrintHysteresis(void)
 {
-	unsigned char rxBuffer[2] = {0x00};
+	unsigned char rxBuffer[2] = { 0x00 };
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, T_HYST_SETP, 1, rxBuffer);
 	uart_print("THyst Setpoint T = ");
 	uart_print(my_itoa(rxBuffer[0]));
@@ -797,8 +801,8 @@ void ADT7420_PrintHysteresis(void)
 ******************************************************************************/
 void ADT7420_DisplaySetFaultQueueMenu(void)
 {
-	unsigned char txBuffer[1] = {0x00};
-	char rx = 0;
+	unsigned char txBuffer[1] = { 0x00 };
+	char          rx          = 0;
 
 	uart_print("\n\r>Fault Queue Menu\n\r");
 	uart_print("-----------------------------------------\n\r");
@@ -810,37 +814,37 @@ void ADT7420_DisplaySetFaultQueueMenu(void)
 
 	// Check if data is available on the UART
 	// Store and display received data
-	rx = uart_inbyte();
+	rx = uart_inbyte( );
 
 	switch (rx)
 	{
-	case '1':
-		txBuffer[0] = 0x00 << FAULT_QUEUE;
-		uart_print("1 fault queue\n\r");
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	case '2':
-		txBuffer[0] = 0x01 << FAULT_QUEUE;
-		uart_print("2 fault queues\n\r");
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	case '3':
-		txBuffer[0] = 0x02 << FAULT_QUEUE;
-		uart_print("3 fault queues\n\r");
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	case '4':
-		txBuffer[0] = 0x03 << FAULT_QUEUE;
-		uart_print("4 fault queues\n\r");
-		rxData = 'm';
-		uart_print("\n\r>Returning to Main Menu...\n\r");
-		break;
-	default:
-		uart_print("Wrong option!\n\r");
-		break;
+	case '1' :
+			txBuffer[0] = 0x00 << FAULT_QUEUE;
+			uart_print("1 fault queue\n\r");
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		case '2' :
+			txBuffer[0] = 0x01 << FAULT_QUEUE;
+			uart_print("2 fault queues\n\r");
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		case '3' :
+			txBuffer[0] = 0x02 << FAULT_QUEUE;
+			uart_print("3 fault queues\n\r");
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		case '4' :
+			txBuffer[0] = 0x03 << FAULT_QUEUE;
+			uart_print("4 fault queues\n\r");
+			rxData = 'm';
+			uart_print("\n\r>Returning to Main Menu...\n\r");
+			break;
+		default:
+			uart_print("Wrong option!\n\r");
+			break;
 	}
 	I2C_Write(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, txBuffer);
 }
@@ -854,8 +858,8 @@ void ADT7420_DisplaySetFaultQueueMenu(void)
 ******************************************************************************/
 void ADT7420_PrintFaultQueue(void)
 {
-	unsigned char rxBuffer[1] = {0x00};
-	char rx = 0;
+	unsigned char rxBuffer[1] = { 0x00 };
+	char          rx          = 0;
 
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
@@ -863,20 +867,20 @@ void ADT7420_PrintFaultQueue(void)
 
 	switch (rx)
 	{
-	case 0x00:
-		uart_print("1 fault queue\n\r");
-		break;
-	case 0x01:
-		uart_print("2 fault queues\n\r");
-		break;
-	case 0x02:
-		uart_print("3 fault queues\n\r");
-		break;
-	case 0x03:
-		uart_print("4 fault queues\n\r");
-		break;
-	default:
-		break;
+		case 0x00 :
+			uart_print("1 fault queue\n\r");
+			break;
+		case 0x01 :
+			uart_print("2 fault queues\n\r");
+			break;
+		case 0x02 :
+			uart_print("3 fault queues\n\r");
+			break;
+		case 0x03 :
+			uart_print("4 fault queues\n\r");
+			break;
+		default:
+			break;
 	}
 }
 
@@ -889,7 +893,7 @@ void ADT7420_PrintFaultQueue(void)
 ******************************************************************************/
 void ADT7420_PrintAlertMode(void)
 {
-	unsigned char rxBuffer[2] = {0x00};
+	unsigned char rxBuffer[2] = { 0x00 };
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
 	if (rxBuffer[0] & (1 << INT_CT))
@@ -911,7 +915,7 @@ void ADT7420_PrintAlertMode(void)
 ******************************************************************************/
 void ADT7420_PrintCTPolarity(void)
 {
-	unsigned char rxBuffer[1] = {0x00};
+	unsigned char rxBuffer[1] = { 0x00 };
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
 	if (rxBuffer[0] & (1 << CT_POL))
@@ -924,6 +928,7 @@ void ADT7420_PrintCTPolarity(void)
 	}
 }
 
+
 /******************************************************************************
 * @brief Displays output polarity setting for INT pin.
 *
@@ -933,7 +938,7 @@ void ADT7420_PrintCTPolarity(void)
 ******************************************************************************/
 void ADT7420_PrintINTPolarity(void)
 {
-	unsigned char rxBuffer[1] = {0x00};
+	unsigned char rxBuffer[1] = { 0x00 };
 	I2C_Read(IIC_BASEADDR, ADT7420_IIC_ADDR, CONFIG_REG, 1, rxBuffer);
 
 	if (rxBuffer[0] & (1 << INT_POL))
