@@ -1,0 +1,2 @@
+D:\\Users\\Hust\\AppData\\Local\\Programs\\Python\\Python36\\python.exe
+D:\\Users\\Hust\\AppData\\Local\\Programs\\Python\\Python36\\Scripts\\pip.exe

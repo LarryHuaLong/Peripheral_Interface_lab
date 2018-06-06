@@ -7,7 +7,7 @@ import serial
 from matplotlib.backends.backend_qt5agg import \
     FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-from PyQt5 import QtWidgets,QtCore
+from PyQt5 import QtWidgets, QtCore
 
 from Ui_ADT7420 import Ui_MplMainWindow
 
@@ -29,31 +29,28 @@ class App(QtWidgets.QWidget, Ui_MplMainWindow):
         self.pushButton_setfaultqueue.clicked.connect(self.setFaultQueue)
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.read_data)
-        self.serial = serial.Serial('COM1', 115200, timeout=1)
+        self.serial = serial.Serial('COM6', 115200, timeout=1)
         if False == self.serial.isOpen():
             print("faild to open serial port!\n")
         else:
             self.timer.start(1000)
         self.data = list()
-    def plot(self):
-        self.mplfigure.canvas.ax.clear()
-        self.mplfigure.canvas.ax.plot(self.data, '*-')
-        self.mplfigure.canvas.draw()
+
 
     def read_data(self):
         text = self.serial.read_all()
         print(text)
+        #self.textEdit_log.clear()
         self.textEdit_log.insertPlainText(text.decode())
 
         temp = re.findall(r"T = (?P<temp>[0-9]*\.00) C", text.decode())
-        temp = re.findall(
-            r"T = (?P<temp>[0-9]*\.00) C", "T = 5.00 C T = 10.00 C T = 20.00 C T = 40.00 C T = 60.00 C ")
+        #temp = re.findall(r"T = (?P<temp>[0-9]*\.00) C", "T = 5.00 C T = 10.00 C T = 20.00 C T = 40.00 C T = 60.00 C ")
 
         for t in temp:
             print(float(t))
             if len(self.data) >= 60:
                 del self.data[0]
-            self.data.append(float(t)+1.0)
+            self.data.append(float(t)/16)
         self.mplfigure.canvas.ax.clear()
         self.mplfigure.canvas.ax.plot(self.data, '*-')
         self.mplfigure.canvas.draw()

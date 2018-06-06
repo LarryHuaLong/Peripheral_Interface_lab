@@ -123,7 +123,6 @@ int main() {
     }
 	
 	uart_print("Exiting ADT7420 test application!\n\r");
-			
 	return 0;
 }
 

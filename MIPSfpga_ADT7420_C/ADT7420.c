@@ -362,10 +362,10 @@ int ADT7420_ReadTemp(void)
 ******************************************************************************/
 void Display_Temp(short int data)
 {
-	int     value     = 0;
+	int     value     = data;
 
 	// converting data for display
-	if(ADT7420_GetResolution(0) == 0)
+	/*if(ADT7420_GetResolution(0) == 0)
 	{
 		if(data&0x1000)
 		{
@@ -377,7 +377,7 @@ void Display_Temp(short int data)
 	{
 		value = data / 128;
 	}
-
+*/
 	if(value >= 0)
 	{
 	    uart_print("T = ");
