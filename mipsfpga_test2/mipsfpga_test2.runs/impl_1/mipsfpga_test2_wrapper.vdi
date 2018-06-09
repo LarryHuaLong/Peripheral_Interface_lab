@@ -1,0 +1,738 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri Jun 08 21:58:56 2018
+# Process ID: 7484
+# Log file: E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/impl_1/mipsfpga_test2_wrapper.vdi
+# Journal file: E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source mipsfpga_test2_wrapper.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_MIPS_MicroAptiv_UP_0_0/mipsfpga_test2_MIPS_MicroAptiv_UP_0_0.dcp' for cell 'mipsfpga_test2_i/MIPS_MicroAptiv_UP_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0.dcp' for cell 'mipsfpga_test2_i/ahblite_axi_bridge_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xbar_0/mipsfpga_test2_xbar_0.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0.dcp' for cell 'mipsfpga_test2_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_bram_ctrl_1_0/mipsfpga_test2_axi_bram_ctrl_1_0.dcp' for cell 'mipsfpga_test2_i/axi_bram_ctrl_1'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_blk_mem_gen_0_1/mipsfpga_test2_blk_mem_gen_0_1.dcp' for cell 'mipsfpga_test2_i/blk_mem_gen_1'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1.dcp' for cell 'mipsfpga_test2_i/axi_uart16550_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xlconcat_0_1/mipsfpga_test2_xlconcat_0_1.dcp' for cell 'mipsfpga_test2_i/xlconcat_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xlconstant_0_0/mipsfpga_test2_xlconstant_0_0.dcp' for cell 'mipsfpga_test2_i/xlconstant_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xlconstant_0_1/mipsfpga_test2_xlconstant_0_1.dcp' for cell 'mipsfpga_test2_i/xlconstant_1'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xlconstant_0_2/mipsfpga_test2_xlconstant_0_2.dcp' for cell 'mipsfpga_test2_i/xlconstant_2'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.dcp' for cell 'mipsfpga_test2_i/clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_util_vector_logic_0_0/mipsfpga_test2_util_vector_logic_0_0.dcp' for cell 'mipsfpga_test2_i/util_vector_logic_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_util_vector_logic_0_1/mipsfpga_test2_util_vector_logic_0_1.dcp' for cell 'mipsfpga_test2_i/util_vector_logic_1'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_util_ds_buf_0_0/mipsfpga_test2_util_ds_buf_0_0.dcp' for cell 'mipsfpga_test2_i/util_ds_buf_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xlconstant_0_3/mipsfpga_test2_xlconstant_0_3.dcp' for cell 'mipsfpga_test2_i/xlconstant_3'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_mig_7series_0_0/mipsfpga_test2_mig_7series_0_0.dcp' for cell 'mipsfpga_test2_i/mig_7series_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_util_vector_logic_2_0/mipsfpga_test2_util_vector_logic_2_0.dcp' for cell 'mipsfpga_test2_i/util_vector_logic_2'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0.dcp' for cell 'mipsfpga_test2_i/PWM_w_Int_1'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0.dcp' for cell 'mipsfpga_test2_i/axi_tft_0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_0/mipsfpga_test2_auto_ds_0.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_0/mipsfpga_test2_auto_pc_0.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_cc_0/mipsfpga_test2_auto_cc_0.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m01_couplers/auto_cc'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_1/mipsfpga_test2_auto_ds_1.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m02_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_2/mipsfpga_test2_auto_ds_2.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_1/mipsfpga_test2_auto_pc_1.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_3/mipsfpga_test2_auto_ds_3.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_2/mipsfpga_test2_auto_pc_2.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_4/mipsfpga_test2_auto_ds_4.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_3/mipsfpga_test2_auto_pc_3.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_0/mipsfpga_test2_auto_us_0.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_1/mipsfpga_test2_auto_us_1.dcp' for cell 'mipsfpga_test2_i/axi_interconnect_0/s01_couplers/auto_us'
+INFO: [Netlist 29-17] Analyzing 854 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0_board.xdc] for cell 'mipsfpga_test2_i/axi_gpio_0/U0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0_board.xdc] for cell 'mipsfpga_test2_i/axi_gpio_0/U0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0.xdc] for cell 'mipsfpga_test2_i/axi_gpio_0/U0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0.xdc] for cell 'mipsfpga_test2_i/axi_gpio_0/U0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1_board.xdc] for cell 'mipsfpga_test2_i/axi_uart16550_0/U0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1_board.xdc] for cell 'mipsfpga_test2_i/axi_uart16550_0/U0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1.xdc] for cell 'mipsfpga_test2_i/axi_uart16550_0/U0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1.xdc] for cell 'mipsfpga_test2_i/axi_uart16550_0/U0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0_board.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0_board.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.xdc:56]
+INFO: [Timing 38-2] Deriving generated clocks [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.xdc:56]
+get_clocks: Time (s): cpu = 00:00:49 ; elapsed = 00:00:46 . Memory (MB): peak = 1168.227 ; gain = 510.488
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_mig_7series_0_0/mipsfpga_test2_mig_7series_0_0/user_design/constraints/mipsfpga_test2_mig_7series_0_0.xdc] for cell 'mipsfpga_test2_i/mig_7series_0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_mig_7series_0_0/mipsfpga_test2_mig_7series_0_0/user_design/constraints/mipsfpga_test2_mig_7series_0_0.xdc] for cell 'mipsfpga_test2_i/mig_7series_0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0.xdc] for cell 'mipsfpga_test2_i/axi_tft_0/U0'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0.xdc] for cell 'mipsfpga_test2_i/axi_tft_0/U0'
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_xbar_0/mipsfpga_test2_xbar_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_gpio_0_0/mipsfpga_test2_axi_gpio_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_bram_ctrl_1_0/mipsfpga_test2_axi_bram_ctrl_1_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_blk_mem_gen_0_1/mipsfpga_test2_blk_mem_gen_0_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_uart16550_0_1/mipsfpga_test2_axi_uart16550_0_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_clk_wiz_0_0/mipsfpga_test2_clk_wiz_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_mig_7series_0_0/mipsfpga_test2_mig_7series_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_0/mipsfpga_test2_auto_ds_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_0/mipsfpga_test2_auto_pc_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_cc_0/mipsfpga_test2_auto_cc_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_1/mipsfpga_test2_auto_ds_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_2/mipsfpga_test2_auto_ds_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_1/mipsfpga_test2_auto_pc_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_3/mipsfpga_test2_auto_ds_3.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_2/mipsfpga_test2_auto_pc_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_4/mipsfpga_test2_auto_ds_4.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_pc_3/mipsfpga_test2_auto_pc_3.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_0/mipsfpga_test2_auto_us_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_1/mipsfpga_test2_auto_us_1.dcp'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_tft_0/U0'
+INFO: [Timing 38-2] Deriving generated clocks [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0_clocks.xdc:48]
+get_clocks: Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 1179.039 ; gain = 0.000
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_axi_tft_0_0/mipsfpga_test2_axi_tft_0_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_tft_0/U0'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_0/mipsfpga_test2_auto_ds_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_ds/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_0/mipsfpga_test2_auto_ds_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_ds/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_cc_0/mipsfpga_test2_auto_cc_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m01_couplers/auto_cc/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_cc_0/mipsfpga_test2_auto_cc_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m01_couplers/auto_cc/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_1/mipsfpga_test2_auto_ds_1_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m02_couplers/auto_ds/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_1/mipsfpga_test2_auto_ds_1_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m02_couplers/auto_ds/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_2/mipsfpga_test2_auto_ds_2_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_ds/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_2/mipsfpga_test2_auto_ds_2_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_ds/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_3/mipsfpga_test2_auto_ds_3_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_ds/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_3/mipsfpga_test2_auto_ds_3_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_ds/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_4/mipsfpga_test2_auto_ds_4_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_ds/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_ds_4/mipsfpga_test2_auto_ds_4_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_ds/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_0/mipsfpga_test2_auto_us_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_0/mipsfpga_test2_auto_us_0_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_1/mipsfpga_test2_auto_us_1_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_auto_us_1/mipsfpga_test2_auto_us_1_clocks.xdc] for cell 'mipsfpga_test2_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 279 instances were transformed.
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 24 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 236 instances
+
+link_design: Time (s): cpu = 00:02:29 ; elapsed = 00:02:23 . Memory (MB): peak = 1179.039 ; gain = 983.836
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1179.039 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 22b868df6
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1179.039 ; gain = 0.000
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 7 inverter(s) to 40 load pin(s).
+INFO: [Opt 31-10] Eliminated 447 cells.
+Phase 2 Constant Propagation | Checksum: 1a136dd3c
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1179.039 ; gain = 0.000
+
+Phase 3 Sweep
+WARNING: [Opt 31-6] Deleting driverless net: mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/u_axi_mc/USE_UPSIZER.upsizer_d2/USE_READ.read_data_inst/USE_FPGA_LAST_WORD.last_beat_curr_word_inst/last_beat_ii.
+WARNING: [Opt 31-6] Deleting driverless net: mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/u_axi_mc/USE_UPSIZER.upsizer_d2/USE_READ.read_data_inst/USE_FPGA_WORD_COMPLETED.next_word_wrap_inst/next_word_wrap.
+WARNING: [Opt 31-6] Deleting driverless net: mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/u_axi_mc/USE_UPSIZER.upsizer_d2/USE_WRITE.write_data_inst/USE_FPGA_WORD_COMPLETED.next_word_wrap_inst/next_word_wrap.
+INFO: [Opt 31-12] Eliminated 3620 unconnected nets.
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-11] Eliminated 3488 unconnected cells.
+Phase 3 Sweep | Checksum: 28a4e4c2b
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1179.039 ; gain = 0.000
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.373 . Memory (MB): peak = 1179.039 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 28a4e4c2b
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1179.039 ; gain = 0.000
+Implement Debug Cores | Checksum: 1697eefd4
+Logic Optimization | Checksum: 1697eefd4
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 3.13 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 43 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 86
+Ending PowerOpt Patch Enables Task | Checksum: 28a4e4c2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1461.391 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 28a4e4c2b
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 1461.391 ; gain = 282.352
+INFO: [Common 17-83] Releasing license: Implementation
+81 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:02:23 ; elapsed = 00:02:25 . Memory (MB): peak = 1461.391 ; gain = 282.352
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.320 . Memory (MB): peak = 1461.391 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:45 ; elapsed = 00:00:29 . Memory (MB): peak = 1461.391 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/impl_1/mipsfpga_test2_wrapper_drc_opted.rpt.
+report_drc: Time (s): cpu = 00:00:23 ; elapsed = 00:00:13 . Memory (MB): peak = 1461.391 ; gain = 0.000
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[10] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][5]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[11] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][6]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[12] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][7]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[13] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][8]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[5] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[6] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][1]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[7] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][2]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[8] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][3]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[9] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][4]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[10] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][5]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[11] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][6]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[12] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][7]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[13] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][8]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[5] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[6] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][1]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[7] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][2]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[8] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][3]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[9] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][4]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/RSTRAMARSTRAM (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/RSTRAMB (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 20 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Runtime Estimator
+Phase 1 Placer Runtime Estimator | Checksum: 1ce898dd5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1461.391 ; gain = 0.000
+
+Phase 2 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.405 . Memory (MB): peak = 1461.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.402 . Memory (MB): peak = 1461.391 ; gain = 0.000
+
+Phase 2.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 2.1.1 Pre-Place Cells
+Phase 2.1.1 Pre-Place Cells | Checksum: 06581d7c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1461.391 ; gain = 0.000
+WARNING: [Place 30-12] An IO Bus SW with more than one IO standard is found. Components associated with this bus are: 
+	SW[15] of IOStandard LVCMOS33
+	SW[14] of IOStandard LVCMOS33
+	SW[13] of IOStandard LVCMOS33
+	SW[12] of IOStandard LVCMOS33
+	SW[11] of IOStandard LVCMOS33
+	SW[10] of IOStandard LVCMOS33
+	SW[9] of IOStandard LVCMOS18
+	SW[8] of IOStandard LVCMOS18
+	SW[7] of IOStandard LVCMOS33
+	SW[6] of IOStandard LVCMOS33
+	SW[5] of IOStandard LVCMOS33
+	SW[4] of IOStandard LVCMOS33
+	SW[3] of IOStandard LVCMOS33
+	SW[2] of IOStandard LVCMOS33
+	SW[1] of IOStandard LVCMOS33
+	SW[0] of IOStandard LVCMOS33
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 2.1.2 IO & Clk Clean Up
+WARNING: [Place 30-574] Poor placement for routing between an IO pin and BUFG. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	JB4_IBUF_inst (IBUF.O) is locked to IOB_X0Y120
+	mipsfpga_test2_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y1
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+Phase 2.1.2 IO & Clk Clean Up | Checksum: 06581d7c
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:50 . Memory (MB): peak = 1461.391 ; gain = 0.000
+
+Phase 2.1.3 Implementation Feasibility check On IDelay
+Phase 2.1.3 Implementation Feasibility check On IDelay | Checksum: 06581d7c
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:50 . Memory (MB): peak = 1461.391 ; gain = 0.000
+
+Phase 2.1.4 Commit IO Placement
+Phase 2.1.4 Commit IO Placement | Checksum: 7f80dc6f
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:50 . Memory (MB): peak = 1461.391 ; gain = 0.000
+Phase 2.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10df2a06a
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:51 . Memory (MB): peak = 1461.391 ; gain = 0.000
+
+Phase 2.2 Build Placer Netlist Model
+
+Phase 2.2.1 Place Init Design
+
+Phase 2.2.1.1 Init Lut Pin Assignment
+Phase 2.2.1.1 Init Lut Pin Assignment | Checksum: 207e7fc2f
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:59 . Memory (MB): peak = 1461.391 ; gain = 0.000
+Phase 2.2.1 Place Init Design | Checksum: 1c44fe488
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:39 . Memory (MB): peak = 1514.813 ; gain = 53.422
+Phase 2.2 Build Placer Netlist Model | Checksum: 1c44fe488
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:39 . Memory (MB): peak = 1514.813 ; gain = 53.422
+
+Phase 2.3 Constrain Clocks/Macros
+
+Phase 2.3.1 Constrain Global/Regional Clocks
+Phase 2.3.1 Constrain Global/Regional Clocks | Checksum: 1c44fe488
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:39 . Memory (MB): peak = 1514.813 ; gain = 53.422
+Phase 2.3 Constrain Clocks/Macros | Checksum: 1c44fe488
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:39 . Memory (MB): peak = 1514.813 ; gain = 53.422
+Phase 2 Placer Initialization | Checksum: 1c44fe488
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:39 . Memory (MB): peak = 1514.813 ; gain = 53.422
+
+Phase 3 Global Placement
+Phase 3 Global Placement | Checksum: 122b08f0f
+
+Time (s): cpu = 00:04:23 ; elapsed = 00:03:23 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4 Detail Placement
+
+Phase 4.1 Commit Multi Column Macros
+Phase 4.1 Commit Multi Column Macros | Checksum: 122b08f0f
+
+Time (s): cpu = 00:04:23 ; elapsed = 00:03:23 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.2 Commit Most Macros & LUTRAMs
+Phase 4.2 Commit Most Macros & LUTRAMs | Checksum: 273af4055
+
+Time (s): cpu = 00:05:21 ; elapsed = 00:03:58 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.3 Area Swap Optimization
+Phase 4.3 Area Swap Optimization | Checksum: 24011a82c
+
+Time (s): cpu = 00:05:23 ; elapsed = 00:04:00 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.4 updateClock Trees: DP
+Phase 4.4 updateClock Trees: DP | Checksum: 24011a82c
+
+Time (s): cpu = 00:05:23 ; elapsed = 00:04:00 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.5 Timing Path Optimizer
+Phase 4.5 Timing Path Optimizer | Checksum: 27abcd079
+
+Time (s): cpu = 00:05:43 ; elapsed = 00:04:11 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.6 Small Shape Detail Placement
+
+Phase 4.6.1 Commit Small Macros & Core Logic
+
+Phase 4.6.1.1 setBudgets
+Phase 4.6.1.1 setBudgets | Checksum: 1e26d5f07
+
+Time (s): cpu = 00:05:43 ; elapsed = 00:04:11 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.6.1.2 Commit Slice Clusters
+Phase 4.6.1.2 Commit Slice Clusters | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:26 ; elapsed = 00:04:49 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 4.6.1 Commit Small Macros & Core Logic | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:26 ; elapsed = 00:04:49 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:27 ; elapsed = 00:04:50 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:28 ; elapsed = 00:04:51 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 4.6 Small Shape Detail Placement | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:28 ; elapsed = 00:04:51 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 4.7 Re-assign LUT pins
+Phase 4.7 Re-assign LUT pins | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:33 ; elapsed = 00:04:56 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 4 Detail Placement | Checksum: 18c0947ed
+
+Time (s): cpu = 00:06:33 ; elapsed = 00:04:56 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5 Post Placement Optimization and Clean-Up
+
+Phase 5.1 PCOPT Shape updates
+Phase 5.1 PCOPT Shape updates | Checksum: 127aa2a45
+
+Time (s): cpu = 00:06:35 ; elapsed = 00:04:57 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.2 Post Commit Optimization
+
+Phase 5.2.1 updateClock Trees: PCOPT
+Phase 5.2.1 updateClock Trees: PCOPT | Checksum: 127aa2a45
+
+Time (s): cpu = 00:06:35 ; elapsed = 00:04:58 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.2.2 Post Placement Optimization
+
+Phase 5.2.2.1 Post Placement Timing Optimization
+
+Phase 5.2.2.1.1 Restore Best Placement
+Phase 5.2.2.1.1 Restore Best Placement | Checksum: 14907b352
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:05:22 . Memory (MB): peak = 1568.824 ; gain = 107.434
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.570. For the most accurate timing information please run report_timing.
+Phase 5.2.2.1 Post Placement Timing Optimization | Checksum: 14907b352
+
+Time (s): cpu = 00:07:17 ; elapsed = 00:05:22 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 5.2.2 Post Placement Optimization | Checksum: 14907b352
+
+Time (s): cpu = 00:07:17 ; elapsed = 00:05:22 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 5.2 Post Commit Optimization | Checksum: 14907b352
+
+Time (s): cpu = 00:07:17 ; elapsed = 00:05:22 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.3 Sweep Clock Roots: Post-Placement
+Phase 5.3 Sweep Clock Roots: Post-Placement | Checksum: 14907b352
+
+Time (s): cpu = 00:07:18 ; elapsed = 00:05:23 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.4 Post Placement Cleanup
+Phase 5.4 Post Placement Cleanup | Checksum: 14907b352
+
+Time (s): cpu = 00:07:18 ; elapsed = 00:05:23 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.5 Placer Reporting
+
+Phase 5.5.1 Restore STA
+Phase 5.5.1 Restore STA | Checksum: 14907b352
+
+Time (s): cpu = 00:07:18 ; elapsed = 00:05:24 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 5.5 Placer Reporting | Checksum: 14907b352
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:24 . Memory (MB): peak = 1568.824 ; gain = 107.434
+
+Phase 5.6 Final Placement Cleanup
+Phase 5.6 Final Placement Cleanup | Checksum: 1883375ee
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:24 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Phase 5 Post Placement Optimization and Clean-Up | Checksum: 1883375ee
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:24 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Ending Placer Task | Checksum: 1367f8e7f
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:25 . Memory (MB): peak = 1568.824 ; gain = 107.434
+INFO: [Common 17-83] Releasing license: Implementation
+94 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:07:39 ; elapsed = 00:05:37 . Memory (MB): peak = 1568.824 ; gain = 107.434
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:42 ; elapsed = 00:00:14 . Memory (MB): peak = 1568.824 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1568.824 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.220 . Memory (MB): peak = 1568.824 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1568.824 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.419 . Memory (MB): peak = 1568.824 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (PLCK-12) Clock Placer Checks - Poor placement for routing between an IO pin and BUFG. 
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	JB4_IBUF_inst (IBUF.O) is locked to H14
+	mipsfpga_test2_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y1
+
+WARNING: [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus SW[15:0] with more than one IO standard is found. Components associated with this bus are:  SW[15] of IOStandard LVCMOS33; SW[14] of IOStandard LVCMOS33; SW[13] of IOStandard LVCMOS33; SW[12] of IOStandard LVCMOS33; SW[11] of IOStandard LVCMOS33; SW[10] of IOStandard LVCMOS33; SW[9] of IOStandard LVCMOS18; SW[8] of IOStandard LVCMOS18; SW[7] of IOStandard LVCMOS33; SW[6] of IOStandard LVCMOS33; SW[5] of IOStandard LVCMOS33; SW[4] of IOStandard LVCMOS33; SW[3] of IOStandard LVCMOS33; SW[2] of IOStandard LVCMOS33; SW[1] of IOStandard LVCMOS33; SW[0] of IOStandard LVCMOS33;
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 11ff25cc1
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:42 . Memory (MB): peak = 1568.824 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 11ff25cc1
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:01:45 . Memory (MB): peak = 1568.824 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 11ff25cc1
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:01:45 . Memory (MB): peak = 1568.824 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 199900528
+
+Time (s): cpu = 00:03:53 ; elapsed = 00:02:41 . Memory (MB): peak = 1568.824 ; gain = 0.000
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.658  | TNS=0.000  | WHS=-1.034 | THS=-1991.728|
+
+Phase 2 Router Initialization | Checksum: 151f20817
+
+Time (s): cpu = 00:04:45 ; elapsed = 00:03:11 . Memory (MB): peak = 1568.824 ; gain = 0.000
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: bb313ace
+
+Time (s): cpu = 00:05:22 ; elapsed = 00:03:31 . Memory (MB): peak = 1568.824 ; gain = 0.000
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 7872
+ Number of Nodes with overlaps = 1422
+ Number of Nodes with overlaps = 314
+ Number of Nodes with overlaps = 90
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: e4eb7669
+
+Time (s): cpu = 00:08:10 ; elapsed = 00:05:08 . Memory (MB): peak = 1568.824 ; gain = 0.000
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.110 | TNS=-9.961 | WHS=N/A    | THS=N/A    |
+
+
+Phase 4.1.2 GlobIterForTiming
+
+Phase 4.1.2.1 Update Timing
+Phase 4.1.2.1 Update Timing | Checksum: f8f06bbf
+
+Time (s): cpu = 00:08:16 ; elapsed = 00:05:12 . Memory (MB): peak = 1568.824 ; gain = 0.000
+
+Phase 4.1.2.2 Fast Budgeting
+Phase 4.1.2.2 Fast Budgeting | Checksum: 11d7ed66e
+
+Time (s): cpu = 00:08:21 ; elapsed = 00:05:17 . Memory (MB): peak = 1573.906 ; gain = 5.082
+Phase 4.1.2 GlobIterForTiming | Checksum: d017cd0c
+
+Time (s): cpu = 00:08:25 ; elapsed = 00:05:21 . Memory (MB): peak = 1573.906 ; gain = 5.082
+Phase 4.1 Global Iteration 0 | Checksum: d017cd0c
+
+Time (s): cpu = 00:08:25 ; elapsed = 00:05:21 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 15262f7a3
+
+Time (s): cpu = 00:08:27 ; elapsed = 00:05:23 . Memory (MB): peak = 1573.906 ; gain = 5.082
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.224 | TNS=-10.491| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 107ef586c
+
+Time (s): cpu = 00:08:28 ; elapsed = 00:05:23 . Memory (MB): peak = 1573.906 ; gain = 5.082
+Phase 4 Rip-up And Reroute | Checksum: 107ef586c
+
+Time (s): cpu = 00:08:28 ; elapsed = 00:05:23 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 12bfe34fb
+
+Time (s): cpu = 00:08:50 ; elapsed = 00:05:35 . Memory (MB): peak = 1573.906 ; gain = 5.082
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.110 | TNS=-9.961 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 12bfe34fb
+
+Time (s): cpu = 00:08:54 ; elapsed = 00:05:38 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 12bfe34fb
+
+Time (s): cpu = 00:08:54 ; elapsed = 00:05:38 . Memory (MB): peak = 1573.906 ; gain = 5.082
+Phase 5 Delay and Skew Optimization | Checksum: 12bfe34fb
+
+Time (s): cpu = 00:08:55 ; elapsed = 00:05:38 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Update Timing
+Phase 6.1 Update Timing | Checksum: 191cbd8a8
+
+Time (s): cpu = 00:09:34 ; elapsed = 00:05:59 . Memory (MB): peak = 1573.906 ; gain = 5.082
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.110 | TNS=-9.961 | WHS=-0.015 | THS=-0.302 |
+
+Phase 6 Post Hold Fix | Checksum: 1e327f394
+
+Time (s): cpu = 00:09:35 ; elapsed = 00:06:00 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 7.91287 %
+  Global Horizontal Routing Utilization  = 10.7616 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 74.7748%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 72.973%, No Congested Regions.
+East Dir 2x2 Area, Max Cong = 85.2941%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X22Y20 -> INT_R_X23Y21
+West Dir 1x1 Area, Max Cong = 94.1176%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X25Y23 -> INT_R_X25Y23
+   INT_L_X28Y22 -> INT_L_X28Y22
+   INT_R_X33Y21 -> INT_R_X33Y21
+   INT_L_X24Y20 -> INT_L_X24Y20
+   INT_R_X25Y20 -> INT_R_X25Y20
+Phase 7 Route finalize | Checksum: 21f2f9126
+
+Time (s): cpu = 00:09:36 ; elapsed = 00:06:01 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 21f2f9126
+
+Time (s): cpu = 00:09:36 ; elapsed = 00:06:01 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 2655d14b3
+
+Time (s): cpu = 00:09:46 ; elapsed = 00:06:10 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 2655d14b3
+
+Time (s): cpu = 00:10:24 ; elapsed = 00:06:30 . Memory (MB): peak = 1573.906 ; gain = 5.082
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.110 | TNS=-9.961 | WHS=0.017  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 2655d14b3
+
+Time (s): cpu = 00:10:24 ; elapsed = 00:06:30 . Memory (MB): peak = 1573.906 ; gain = 5.082
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:10:24 ; elapsed = 00:06:30 . Memory (MB): peak = 1573.906 ; gain = 5.082
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+107 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:10:39 ; elapsed = 00:06:40 . Memory (MB): peak = 1573.906 ; gain = 5.082
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:51 ; elapsed = 00:00:17 . Memory (MB): peak = 1573.906 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:01:05 ; elapsed = 00:00:33 . Memory (MB): peak = 1573.906 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/impl_1/mipsfpga_test2_wrapper_drc_routed.rpt.
+report_drc: Time (s): cpu = 00:00:43 ; elapsed = 00:00:29 . Memory (MB): peak = 1586.605 ; gain = 12.699
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+report_timing_summary: Time (s): cpu = 00:02:14 ; elapsed = 00:01:17 . Memory (MB): peak = 1642.434 ; gain = 55.828
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+report_power: Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 1660.102 ; gain = 17.668
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (BUFC-1) Input Buffer Connections - Input buffer JB7_IBUF_inst has no loads. An input buffer must drive an internal load.
+WARNING: [DRC 23-20] Rule violation (BUFC-1) Input Buffer Connections - Input buffer mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[0].gen_ddr2_or_low_dqs_diff.u_iobuf_dqs/IBUFDS/IBUFDS_S (in mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[0].gen_ddr2_or_low_dqs_diff.u_iobuf_dqs macro) has no loads. An input buffer must drive an internal load.
+WARNING: [DRC 23-20] Rule violation (BUFC-1) Input Buffer Connections - Input buffer mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[1].gen_ddr2_or_low_dqs_diff.u_iobuf_dqs/IBUFDS/IBUFDS_S (in mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[1].gen_ddr2_or_low_dqs_diff.u_iobuf_dqs macro) has no loads. An input buffer must drive an internal load.
+WARNING: [DRC 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC 23-20] Rule violation (REQP-1709) Clock output buffering - PLLE2_ADV connectivity violation. The signal mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/pll_clk3_out on the mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i/CLKOUT3 pin of mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i does not drive the same kind of BUFFER load as the other CLKOUT pins. Routing from the different buffer types will not be phase aligned.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[10] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][5]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[11] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][6]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[12] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][7]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[13] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][8]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[5] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[6] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][1]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[7] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][2]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[8] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][3]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[9] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc1.count_d2_reg[8][4]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc1.count_d2_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[10] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][5]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[11] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][6]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[12] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][7]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[13] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][8]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[5] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[6] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][1]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[7] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][2]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[8] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][3]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[9] (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gic0.gc1.count_d3_reg[8][4]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc1.count_d3_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/RSTRAMARSTRAM (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram has an input control pin mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/RSTRAMB (net: mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (mipsfpga_test2_i/axi_tft_0/U0/TFT_CTRL_I/LINE_BUFFER_U4/RAM/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (RTSTAT-10) No routable loads - 1 net(s) have no routable loads. The problem bus(es) and/or net(s) are JB7_IBUF.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 26 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./mipsfpga_test2_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:02:31 ; elapsed = 00:02:20 . Memory (MB): peak = 2037.977 ; gain = 377.875
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 08 22:22:38 2018...

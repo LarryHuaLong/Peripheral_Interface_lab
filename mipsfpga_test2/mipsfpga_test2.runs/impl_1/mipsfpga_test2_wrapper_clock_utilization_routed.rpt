@@ -1,0 +1,360 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date              : Fri Jun 08 22:20:17 2018
+| Host              : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Command           : report_clock_utilization -file mipsfpga_test2_wrapper_clock_utilization_routed.rpt
+| Design            : mipsfpga_test2_wrapper
+| Device            : 7a100t-csg324
+| Speed File        : -1  PRODUCTION 1.14 2014-09-11
+| Temperature Grade : C
+---------------------------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Details of Global Clocks
+3. Details of Regional Clocks
+4. Details of Multi-Regional Clocks
+5. Details of I/O Clocks
+6. Details of Local Clocks
+7. Clock Regions : Key Resource Utilization
+8. Net wise resources used in clock region X0Y0
+9. Net wise resources used in clock region X1Y0
+10. Net wise resources used in clock region X0Y1
+11. Net wise resources used in clock region X1Y1
+12. Net wise resources used in clock region X0Y2
+13. Net wise resources used in clock region X1Y2
+
+1. Clock Primitive Utilization
+------------------------------
+
++-------+------+-----------+-----------+
+| Type  | Used | Available | Num Fixed |
++-------+------+-----------+-----------+
+| BUFG  |    6 |        32 |         0 |
+| BUFH  |    1 |        96 |         0 |
+| BUFIO |    0 |        24 |         0 |
+| MMCM  |    1 |         6 |         1 |
+| PLL   |    2 |         6 |         1 |
+| BUFR  |    0 |        24 |         0 |
+| BUFMR |    0 |        12 |         0 |
++-------+------+-----------+-----------+
+
+
+2. Details of Global Clocks
+---------------------------
+
++-------+----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------+-------+
+|       |                                                                                                          |                                                                                               |   Num Loads   |       |
++-------+----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------+-------+-------+
+| Index | BUFG Cell                                                                                                | Net Name                                                                                      |  BELs | Sites | Fixed |
++-------+----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------+-------+-------+
+|     1 | mipsfpga_test2_i/clk_wiz_0/inst/clkf_buf                                                                 | mipsfpga_test2_i/clk_wiz_0/inst/clkfbout_buf_mipsfpga_test2_clk_wiz_0_0                       |     1 |     1 |    no |
+|     2 | mipsfpga_test2_i/clk_wiz_0/inst/clkout2_buf                                                              | mipsfpga_test2_i/clk_wiz_0/inst/clk_out2                                                      |    61 |    19 |    no |
+|     3 | mipsfpga_test2_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U                                            | mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]                                                   |   167 |    53 |    no |
+|     4 | mipsfpga_test2_i/clk_wiz_0/inst/clkout3_buf                                                              | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3                                                      |   259 |    91 |    no |
+|     5 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/u_bufg_clkdiv0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK |  6721 |  1847 |    no |
+|     6 | mipsfpga_test2_i/clk_wiz_0/inst/clkout1_buf                                                              | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1                                                      | 16929 |  5455 |    no |
++-------+----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------+-------+-------+
+
+
++-------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+-------+
+|       |                                                                                                           |                                                                                                    |   Num Loads  |       |
++-------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------+-------+-------+
+| Index | BUFH Cell                                                                                                 | Net Name                                                                                           | BELs | Sites | Fixed |
++-------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------+-------+-------+
+|     1 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/u_bufh_pll_clk3 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/pll_clk3 |    1 |     1 |    no |
++-------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------+-------+-------+
+
+
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+--------------+-------+
+|       |                                                                                                           |                                                                                                     |   Num Loads  |       |
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------+-------+-------+
+| Index | MMCM Cell                                                                                                 | Net Name                                                                                            | BELs | Sites | Fixed |
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------+-------+-------+
+|     1 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/gen_mmcm.mmcm_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/clk_pll_i |    1 |     1 |   yes |
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------+-------+-------+
+
+
++-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+--------------+-------+
+|       |                                                                                                   |                                                                                                        |   Num Loads  |       |
++-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------+-------+-------+
+| Index | PLL Cell                                                                                          | Net Name                                                                                               | BELs | Sites | Fixed |
++-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------+-------+-------+
+|     1 | mipsfpga_test2_i/clk_wiz_0/inst/plle2_adv_inst                                                    | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1_mipsfpga_test2_clk_wiz_0_0                                    |    1 |     1 |    no |
+|     2 | mipsfpga_test2_i/clk_wiz_0/inst/plle2_adv_inst                                                    | mipsfpga_test2_i/clk_wiz_0/inst/clk_out2_mipsfpga_test2_clk_wiz_0_0                                    |    1 |     1 |    no |
+|     3 | mipsfpga_test2_i/clk_wiz_0/inst/plle2_adv_inst                                                    | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3_mipsfpga_test2_clk_wiz_0_0                                    |    1 |     1 |    no |
+|     4 | mipsfpga_test2_i/clk_wiz_0/inst/plle2_adv_inst                                                    | mipsfpga_test2_i/clk_wiz_0/inst/clkfbout_mipsfpga_test2_clk_wiz_0_0                                    |    1 |     1 |    no |
+|     5 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/pll_clk3_out |    1 |     1 |   yes |
+|     6 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/pll_clkfbout |    1 |     1 |   yes |
+|     7 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk  |    7 |     7 |   yes |
+|     8 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk   |    7 |     7 |   yes |
+|     9 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse   |    7 |     7 |   yes |
++-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------+-------+-------+
+
+
+3. Details of Regional Clocks
+-----------------------------
+
+4. Details of Multi-Regional Clocks
+-----------------------------------
+
+5. Details of I/O Clocks
+------------------------
+
+6. Details of Local Clocks
+--------------------------
+
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+-------+
+|       |                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                  |   Num Loads  |       |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------+-------+
+| Index | Local Clk Src                                                                                                                                                                                                                             | Net Name                                                                                                                                                                                                                                                         | BELs | Sites | Fixed |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------+-------+
+|     1 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed                            |    2 |     2 |   yes |
+|     2 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed                            |    2 |     2 |   yes |
+|     3 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_in_gen.phaser_in | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0 |    8 |    16 |   yes |
+|     4 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_in_gen.phaser_in | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0 |    8 |    16 |   yes |
+|     5 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk                                    |   11 |    11 |   yes |
+|     6 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk                                    |   12 |    12 |   yes |
+|     7 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk                                    |   18 |    18 |   yes |
+|     8 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out              | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk                                    |   18 |    18 |   yes |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------+-------+
+
+
+7. Clock Regions : Key Resource Utilization
+-------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E1   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 7166 | 20800 |  194 |  2400 |    7 |    20 |    0 |    10 |    0 |    20 |
+| X1Y0              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 | 3510 | 12000 |  100 |  2200 |   20 |    40 |    8 |    20 |    0 |    40 |
+| X0Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5085 | 16000 |  658 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y1              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |   16 |    50 |   45 |    50 | 5220 | 15200 | 1460 |  2600 |    2 |    60 |    6 |    30 |    0 |    40 |
+| X0Y2              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  317 | 16000 |   16 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  334 | 15200 |    0 |  2600 |    0 |    60 |    0 |    30 |    0 |    40 |
+| X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20800 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y3              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     1 |    0 |     0 |    0 |     0 |    0 | 10800 |    0 |  2000 |    0 |    30 |    0 |    15 |    0 |    40 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* RAMB36 site can be used as two RAMB18/FIFO18 sites.
+
+
+8. Net wise resources used in clock region X0Y0
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |              Clock Net Name              |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+------------------------------------------+
+| BUFG        | BUFHCE_X0Y8 |   no  |         0 |        0 |       0 |         7 |       0 |       0 | 7166 |   194 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1 |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+------------------------------------------+
+
+
+9. Net wise resources used in clock region X1Y0
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                Clock Net Name               |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------+
+| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  166 |     1 |        0 | mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0] |
+| BUFG        | BUFHCE_X1Y9 |   no  |         0 |        0 |       0 |        36 |       0 |       0 | 3344 |    99 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1    |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------+
+
+
+10. Net wise resources used in clock region X0Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                                         Clock Net Name                                        |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------------------------------------------------------------------------------------+
+| BUFG        | BUFHCE_X0Y21 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   92 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3                                                      |
+| BUFG        | BUFHCE_X0Y22 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  670 |    36 |        0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK |
+| BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 4323 |   622 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1                                                      |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------------------------------------------------------------------------------------+
+
+
+11. Net wise resources used in clock region X1Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                                           Clock Net Name                                           |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------------------------------------------------------------+
+| BUFH        |      ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |    0 |     0 |        0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/pll_clk3 |
+| BUFG        | BUFHCE_X1Y14 |   no  |         0 |        1 |       0 |         0 |       0 |       0 |   15 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out2                                                           |
+| BUFG        | BUFHCE_X1Y21 |   no  |         0 |        0 |       0 |         1 |       0 |       0 |   54 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3                                                           |
+| BUFG        | BUFHCE_X1Y20 |   no  |         0 |        0 |       0 |        15 |       0 |       0 |  885 |   153 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1                                                           |
+| BUFG        | BUFHCE_X1Y13 |   no  |         2 |        0 |       0 |         0 |       0 |       0 | 4266 |  1307 |        0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK      |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------------------------------------------------------------+
+
+
+12. Net wise resources used in clock region X0Y2
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                                         Clock Net Name                                        |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+| BUFG        | BUFHCE_X0Y35 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  43 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out2                                                      |
+| BUFG        | BUFHCE_X0Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  84 |    16 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out1                                                      |
+| BUFG        | BUFHCE_X0Y33 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  88 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3                                                      |
+| BUFG        | BUFHCE_X0Y34 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 102 |     0 |        0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+
+
+13. Net wise resources used in clock region X1Y2
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                                         Clock Net Name                                        |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+| BUFG        | BUFHCE_X1Y24 |   no  |         0 |        1 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clkfbout_buf_mipsfpga_test2_clk_wiz_0_0                       |
+| BUFG        | BUFHCE_X1Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  24 |     0 |        0 | mipsfpga_test2_i/clk_wiz_0/inst/clk_out3                                                      |
+| BUFG        | BUFHCE_X1Y33 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 310 |     0 |        0 | mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------+
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y17 [get_cells mipsfpga_test2_i/clk_wiz_0/inst/clkout1_buf]
+set_property LOC BUFGCTRL_X0Y16 [get_cells mipsfpga_test2_i/clk_wiz_0/inst/clkout2_buf]
+set_property LOC BUFGCTRL_X0Y18 [get_cells mipsfpga_test2_i/clk_wiz_0/inst/clkout3_buf]
+set_property LOC BUFGCTRL_X0Y19 [get_cells mipsfpga_test2_i/clk_wiz_0/inst/clkf_buf]
+set_property LOC BUFGCTRL_X0Y0 [get_cells mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/u_bufg_clkdiv0]
+set_property LOC BUFGCTRL_X0Y1 [get_cells mipsfpga_test2_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U]
+
+# Location of IO Clock Primitives
+
+# Location of MMCM Clock Primitives
+set_property LOC MMCME2_ADV_X1Y1 [get_cells mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/gen_mmcm.mmcm_i]
+
+# Location of BUFH Clock Primitives
+set_property LOC BUFHCE_X1Y12 [get_cells mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/u_bufh_pll_clk3]
+
+# Location of BUFR Clock Primitives
+
+# Location of BUFMR Clock Primitives
+
+# Location of PLL Clock Primitives
+set_property LOC PLLE2_ADV_X1Y2 [get_cells mipsfpga_test2_i/clk_wiz_0/inst/plle2_adv_inst]
+set_property LOC PLLE2_ADV_X1Y1 [get_cells mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i]
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IOB_X1Y126 [get_ports CLK100MHZ]
+set_property LOC IOB_X0Y120 [get_ports JB4]
+
+# Clock net "mipsfpga_test2_i/clk_wiz_0/inst/clk_out1" driven by instance "mipsfpga_test2_i/clk_wiz_0/inst/clkout1_buf" located at site "BUFGCTRL_X0Y17"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out1}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/clk_wiz_0/inst/clk_out1"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out1}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/clk_wiz_0/inst/clk_out2" driven by instance "mipsfpga_test2_i/clk_wiz_0/inst/clkout2_buf" located at site "BUFGCTRL_X0Y16"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out2}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/clk_wiz_0/inst/clk_out2"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out2}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/clk_wiz_0/inst/clk_out3" driven by instance "mipsfpga_test2_i/clk_wiz_0/inst/clkout3_buf" located at site "BUFGCTRL_X0Y18"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out3}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out3}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/clk_wiz_0/inst/clk_out3"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/clk_wiz_0/inst/clk_out3}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/u_bufg_clkdiv0" located at site "BUFGCTRL_X0Y0"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/gen_mmcm.mmcm_i} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/CLK}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i" located at site "PLLE2_ADV_X1Y1"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/freq_refclk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i" located at site "PLLE2_ADV_X1Y1"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/mem_refclk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/plle2_i" located at site "PLLE2_ADV_X1Y1"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_ddr2_infrastructure/sync_pulse}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_in_gen.phaser_in" located at site "PHASER_IN_PHY_X1Y4"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out" located at site "PHASER_OUT_PHY_X1Y4"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out" located at site "PHASER_OUT_PHY_X1Y4"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/oserdes_clk_delayed}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out" located at site "PHASER_OUT_PHY_X1Y5"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/oserdes_clk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_in_gen.phaser_in" located at site "PHASER_IN_PHY_X1Y6"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.if_empty_r_reg[0]_0}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out" located at site "PHASER_OUT_PHY_X1Y6"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out" located at site "PHASER_OUT_PHY_X1Y6"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/oserdes_clk_delayed}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk" driven by instance "mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out" located at site "PHASER_OUT_PHY_X1Y7"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/mig_7series_0/u_mipsfpga_test2_mig_7series_0_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/oserdes_clk}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]" driven by instance "mipsfpga_test2_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U" located at site "BUFGCTRL_X0Y1"
+#startgroup
+create_pblock {CLKAG_mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]}
+add_cells_to_pblock [get_pblocks  {CLKAG_mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]"}]]]
+resize_pblock [get_pblocks {CLKAG_mipsfpga_test2_i/util_ds_buf_0/U0/BUFG_O[0]}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup

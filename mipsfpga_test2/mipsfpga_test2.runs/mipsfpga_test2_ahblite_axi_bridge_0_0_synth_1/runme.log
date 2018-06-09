@@ -1,0 +1,497 @@
+
+*** Running vivado
+    with args -log mipsfpga_test2_ahblite_axi_bridge_0_0.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mipsfpga_test2_ahblite_axi_bridge_0_0.tcl
+
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
+
+****** Vivado v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source mipsfpga_test2_ahblite_axi_bridge_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_ahblite_axi_bridge_0_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_ahblite_axi_bridge_0_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_ahblite_axi_bridge_0_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_ahblite_axi_bridge_0_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_ahblite_axi_bridge_0_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_funcsim.vhdl'. Please regenerate to continue.
+Command: synth_design -top mipsfpga_test2_ahblite_axi_bridge_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 248.707 ; gain = 75.574
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_ahblite_axi_bridge_0_0' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/synth/mipsfpga_test2_ahblite_axi_bridge_0_0.vhd:113]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_INSTANCE bound to: mipsfpga_test2_ahblite_axi_bridge_0_0 - type: string 
+	Parameter C_M_AXI_SUPPORTS_NARROW_BURST bound to: 0 - type: integer 
+	Parameter C_M_AXI_NON_SECURE bound to: 1 - type: integer 
+	Parameter C_S_AHB_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AHB_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_PROTOCOL bound to: AXI4 - type: string 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AHB_AXI_TIMEOUT bound to: 256 - type: integer 
+INFO: [Synth 8-3491] module 'ahblite_axi_bridge' declared at 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahblite_axi_bridge.vhd:264' bound to instance 'U0' of component 'ahblite_axi_bridge' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/synth/mipsfpga_test2_ahblite_axi_bridge_0_0.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'ahblite_axi_bridge' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahblite_axi_bridge.vhd:360]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_INSTANCE bound to: mipsfpga_test2_ahblite_axi_bridge_0_0 - type: string 
+	Parameter C_M_AXI_SUPPORTS_NARROW_BURST bound to: 0 - type: integer 
+	Parameter C_S_AHB_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AHB_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_PROTOCOL bound to: AXI4 - type: string 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AHB_AXI_TIMEOUT bound to: 256 - type: integer 
+	Parameter C_M_AXI_NON_SECURE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ahblite_axi_control' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahblite_axi_control.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'ahblite_axi_control' (1#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahblite_axi_control.vhd:197]
+INFO: [Synth 8-638] synthesizing module 'ahb_if' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahb_if.vhd:296]
+	Parameter C_S_AHB_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AHB_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXI_NON_SECURE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ahb_if' (2#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahb_if.vhd:296]
+INFO: [Synth 8-638] synthesizing module 'ahb_data_counter' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahb_data_counter.vhd:151]
+	Parameter C_FAMILY bound to: virtex7 - type: string 
+INFO: [Synth 8-638] synthesizing module 'counter_f' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/counter_f.vhd:147]
+	Parameter C_NUM_BITS bound to: 5 - type: integer 
+	Parameter C_FAMILY bound to: virtex7 - type: string 
+INFO: [Synth 8-256] done synthesizing module 'counter_f' (3#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/counter_f.vhd:147]
+INFO: [Synth 8-256] done synthesizing module 'ahb_data_counter' (4#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahb_data_counter.vhd:151]
+INFO: [Synth 8-638] synthesizing module 'axi_wchannel' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/axi_wchannel.vhd:242]
+	Parameter C_FAMILY bound to: virtex7 - type: string 
+	Parameter C_S_AHB_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AHB_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXI_SUPPORTS_NARROW_BURST bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_wchannel' (5#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/axi_wchannel.vhd:242]
+INFO: [Synth 8-638] synthesizing module 'axi_rchannel' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/axi_rchannel.vhd:196]
+	Parameter C_S_AHB_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_rchannel' (6#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/axi_rchannel.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'time_out' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/time_out.vhd:155]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_AHB_AXI_TIMEOUT bound to: 256 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'counter_f__parameterized0' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/counter_f.vhd:147]
+	Parameter C_NUM_BITS bound to: 8 - type: integer 
+	Parameter C_FAMILY bound to: artix7 - type: string 
+INFO: [Synth 8-256] done synthesizing module 'counter_f__parameterized0' (6#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/counter_f.vhd:147]
+INFO: [Synth 8-256] done synthesizing module 'time_out' (7#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/time_out.vhd:155]
+INFO: [Synth 8-256] done synthesizing module 'ahblite_axi_bridge' (8#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/ahblite_axi_bridge.vhd:360]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_ahblite_axi_bridge_0_0' (9#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/synth/mipsfpga_test2_ahblite_axi_bridge_0_0.vhd:113]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:33 . Memory (MB): peak = 283.883 ; gain = 110.750
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 283.883 ; gain = 110.750
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_ooc.xdc]
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_ooc.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.409 . Memory (MB): peak = 595.953 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:42 ; elapsed = 00:01:10 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:42 ; elapsed = 00:01:10 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:01:10 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'ctl_sm_cs_reg' in module 'ahblite_axi_control'
+INFO: [Synth 8-5544] ROM "core_is_idle" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ctl_sm_ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ctl_sm_ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ctl_sm_ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ctl_sm_ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "valid_cnt_required_i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "AXI_ALEN_i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "AXI_ABURST_i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+                ctl_idle |                              000 |                              000
+                ctl_addr |                              001 |                              001
+               ctl_write |                              010 |                              010
+               ctl_bresp |                              011 |                              101
+           ctl_bresp_err |                              100 |                              110
+                ctl_read |                              101 |                              011
+            ctl_read_err |                              110 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ctl_sm_cs_reg' using encoding 'sequential' in module 'ahblite_axi_control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:44 ; elapsed = 00:01:13 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 6     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 38    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 2     
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 76    
+	   7 Input      1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ahblite_axi_control 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+	   7 Input      1 Bit        Muxes := 13    
+Module ahb_if 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 19    
+Module counter_f 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module axi_wchannel 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 5     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 24    
+Module axi_rchannel 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 11    
+Module counter_f__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module time_out 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:44 ; elapsed = 00:01:14 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'U0/AXI_WCHANNEL/axi_waddr_done_i_reg' into 'U0/AHBLITE_AXI_CONTROL/ahb_wnr_i_reg' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/ahblite_axi_bridge_v3_0/4cf076ff/hdl/src/vhdl/axi_wchannel.vhd:585]
+INFO: [Synth 8-5544] ROM "U0/AHB_IF/AXI_ALEN_i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_awid[3] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_awid[2] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_awid[1] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_awid[0] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_awlock driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_arid[3] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_arid[2] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_arid[1] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_arid[0] driven by constant 0
+INFO: [Synth 8-3917] design mipsfpga_test2_ahblite_axi_bridge_0_0 has port m_axi_arlock driven by constant 0
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_bid[3]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_bid[2]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_bid[1]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_bid[0]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_rid[3]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_rid[2]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_rid[1]
+WARNING: [Synth 8-3331] design mipsfpga_test2_ahblite_axi_bridge_0_0 has unconnected port m_axi_rid[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:01:14 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:45 ; elapsed = 00:01:14 . Memory (MB): peak = 595.953 ; gain = 422.820
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/AHB_IF/valid_cnt_required_i_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[7] )
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/valid_cnt_required_i_reg[4] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/valid_cnt_required_i_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_DATA_COUNTER/AHB_SAMPLE_CNT_MODULE/INFERRED_GEN.icount_out_reg[5] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[7] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[6] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[5] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[4] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/AXI_ALEN_i_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/AXI_WRITE_CNT_MODULE/INFERRED_GEN.icount_out_reg[5] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/axi_cnt_required_reg[4] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/axi_cnt_required_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/burst_term_txer_cnt_i_reg[4] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/burst_term_txer_cnt_i_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/NARROW_TRANSFER_OFF.M_AXI_WSTRB_i_reg[2] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/NARROW_TRANSFER_OFF.M_AXI_WSTRB_i_reg[1] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_WCHANNEL/NARROW_TRANSFER_OFF.M_AXI_WSTRB_i_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AXI_RCHANNEL/axi_rresp_avlbl_reg[0] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:17 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:47 ; elapsed = 00:01:17 . Memory (MB): peak = 595.953 ; gain = 422.820
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:47 ; elapsed = 00:01:17 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:02:06 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:02:07 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/GEN_1_PROT_CACHE_REG_NON_SECURE.AXI_ACACHE_i_reg[3] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/AHB_IF/GEN_1_PROT_CACHE_REG_NON_SECURE.AXI_ACACHE_i_reg[2] ) is unused and will be removed from module mipsfpga_test2_ahblite_axi_bridge_0_0.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:24 ; elapsed = 00:02:09 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     2|
+|2     |LUT1   |     4|
+|3     |LUT2   |    35|
+|4     |LUT3   |    20|
+|5     |LUT4   |    21|
+|6     |LUT5   |    73|
+|7     |LUT6   |    73|
+|8     |FDRE   |   213|
+|9     |FDSE   |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+--------------------------+------+
+|      |Instance                           |Module                    |Cells |
++------+-----------------------------------+--------------------------+------+
+|1     |top                                |                          |   443|
+|2     |  U0                               |ahblite_axi_bridge        |   443|
+|3     |    AHBLITE_AXI_CONTROL            |ahblite_axi_control       |    65|
+|4     |    AHB_DATA_COUNTER               |ahb_data_counter          |    12|
+|5     |      AHB_SAMPLE_CNT_MODULE        |counter_f_0               |    12|
+|6     |    AHB_IF                         |ahb_if                    |   154|
+|7     |    AXI_RCHANNEL                   |axi_rchannel              |    34|
+|8     |    AXI_WCHANNEL                   |axi_wchannel              |   151|
+|9     |      AXI_WRITE_CNT_MODULE         |counter_f                 |    23|
+|10    |    TIME_OUT                       |time_out                  |    27|
+|11    |      \GEN_WDT.WDT_COUNTER_MODULE  |counter_f__parameterized0 |    22|
++------+-----------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:02:12 . Memory (MB): peak = 595.953 ; gain = 422.820
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:01:29 . Memory (MB): peak = 595.953 ; gain = 81.902
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:02:13 . Memory (MB): peak = 595.953 ; gain = 422.820
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_ooc.xdc]
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_ahblite_axi_bridge_0_0/mipsfpga_test2_ahblite_axi_bridge_0_0_ooc.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+78 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:02:04 . Memory (MB): peak = 595.953 ; gain = 393.973
+INFO: [Coretcl 2-1174] Renamed 10 cell refs.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.260 . Memory (MB): peak = 595.953 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 08 17:39:17 2018...

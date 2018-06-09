@@ -1,0 +1,311 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri Jun 08 18:03:32 2018
+# Process ID: 10640
+# Log file: E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/mipsfpga_test2_PWM_w_Int_1_0_synth_1/mipsfpga_test2_PWM_w_Int_1_0.vds
+# Journal file: E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/mipsfpga_test2_PWM_w_Int_1_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mipsfpga_test2_PWM_w_Int_1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_PWM_w_Int_1_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_PWM_w_Int_1_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_PWM_w_Int_1_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_PWM_w_Int_1_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'mipsfpga_test2_PWM_w_Int_1_0' generated file not found 'e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/mipsfpga_test2_PWM_w_Int_1_0_funcsim.vhdl'. Please regenerate to continue.
+Command: synth_design -top mipsfpga_test2_PWM_w_Int_1_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:36 . Memory (MB): peak = 246.742 ; gain = 73.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_PWM_w_Int_1_0' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/synth/mipsfpga_test2_PWM_w_Int_1_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'PWM_w_Int_v1_0' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1.v:4]
+	Parameter PWM_PERIOD bound to: 20 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'PWM_w_Int_v1_0_S00_AXI' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1_S00_AXI.v:223]
+INFO: [Synth 8-226] default block is never used [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1_S00_AXI.v:364]
+INFO: [Synth 8-256] done synthesizing module 'PWM_w_Int_v1_0_S00_AXI' (1#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1_S00_AXI.v:4]
+INFO: [Synth 8-638] synthesizing module 'PWM_Controller_Int' [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_Controller_Int.v:23]
+	Parameter period bound to: 20 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PWM_Controller_Int' (2#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_Controller_Int.v:23]
+INFO: [Synth 8-256] done synthesizing module 'PWM_w_Int_v1_0' (3#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/ipshared/xilinx.com/pwm_w_int_v1_1/7701067d/hdl/PWM_w_Int_v1_1.v:4]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_PWM_w_Int_1_0' (4#1) [e:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/ip/mipsfpga_test2_PWM_w_Int_1_0/synth/mipsfpga_test2_PWM_w_Int_1_0.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:44 . Memory (MB): peak = 281.012 ; gain = 107.902
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:45 . Memory (MB): peak = 281.012 ; gain = 107.902
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 579.117 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:01:24 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:01:24 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:01:24 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:01:25 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PWM_w_Int_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 6     
+Module PWM_Controller_Int 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:01:26 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design mipsfpga_test2_PWM_w_Int_1_0 has unconnected port s00_axi_arprot[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:01:26 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:39 ; elapsed = 00:01:26 . Memory (MB): peak = 579.117 ; gain = 406.008
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_awaddr_reg[1] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_awaddr_reg[0] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_bresp_reg[1] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_bresp_reg[0] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_araddr_reg[1] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_araddr_reg[0] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_rresp_reg[1] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+INFO: [Synth 8-3332] Sequential element (\inst/PWM_w_Int_v1_0_S00_AXI_inst/axi_rresp_reg[0] ) is unused and will be removed from module mipsfpga_test2_PWM_w_Int_1_0.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:28 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:01:28 . Memory (MB): peak = 579.117 ; gain = 406.008
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:01:28 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:16 ; elapsed = 00:02:16 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:02:16 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:02:16 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     9|
+|2     |LUT1   |    22|
+|3     |LUT2   |    13|
+|4     |LUT3   |     5|
+|5     |LUT4   |    41|
+|6     |LUT5   |     5|
+|7     |LUT6   |    36|
+|8     |FDRE   |   192|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------+-----------------------+------+
+|      |Instance                        |Module                 |Cells |
++------+--------------------------------+-----------------------+------+
+|1     |top                             |                       |   323|
+|2     |  inst                          |PWM_w_Int_v1_0         |   323|
+|3     |    PWM_inst                    |PWM_Controller_Int     |    59|
+|4     |    PWM_w_Int_v1_0_S00_AXI_inst |PWM_w_Int_v1_0_S00_AXI |   264|
++------+--------------------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:02:18 . Memory (MB): peak = 579.117 ; gain = 406.008
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:01:36 . Memory (MB): peak = 579.117 ; gain = 80.988
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:02:19 . Memory (MB): peak = 579.117 ; gain = 406.008
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:02:03 . Memory (MB): peak = 579.117 ; gain = 379.094
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.268 . Memory (MB): peak = 579.117 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 08 18:05:59 2018...

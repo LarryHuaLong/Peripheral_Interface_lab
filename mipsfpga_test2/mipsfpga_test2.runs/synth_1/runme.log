@@ -1,0 +1,2061 @@
+
+*** Running vivado
+    with args -log mipsfpga_test2_wrapper.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mipsfpga_test2_wrapper.tcl
+
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
+
+****** Vivado v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source mipsfpga_test2_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+add_files: Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 301.781 ; gain = 113.461
+Command: synth_design -top mipsfpga_test2_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:31 ; elapsed = 00:01:17 . Memory (MB): peak = 337.199 ; gain = 164.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_wrapper' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2431]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_MIPS_MicroAptiv_UP_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_MIPS_MicroAptiv_UP_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_MIPS_MicroAptiv_UP_0_0' (1#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_MIPS_MicroAptiv_UP_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'MIPS_MicroAptiv_UP_0' of module 'mipsfpga_test2_MIPS_MicroAptiv_UP_0_0' requires 23 connections, but only 22 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2796]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_PWM_w_Int_1_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_PWM_w_Int_1_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_PWM_w_Int_1_0' (2#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_PWM_w_Int_1_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'PWM_w_Int_1' of module 'mipsfpga_test2_PWM_w_Int_1_0' requires 25 connections, but only 23 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2819]
+INFO: [Synth 8-638] synthesizing module 'VCC' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
+INFO: [Synth 8-256] done synthesizing module 'VCC' (3#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_ahblite_axi_bridge_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_ahblite_axi_bridge_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_ahblite_axi_bridge_0_0' (4#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_ahblite_axi_bridge_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_axi_bram_ctrl_1_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_bram_ctrl_1_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_axi_bram_ctrl_1_0' (5#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_bram_ctrl_1_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_bram_ctrl_1' of module 'mipsfpga_test2_axi_bram_ctrl_1_0' requires 40 connections, but only 39 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2895]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_axi_gpio_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_gpio_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_axi_gpio_0_0' (6#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_gpio_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_gpio_0' of module 'mipsfpga_test2_axi_gpio_0_0' requires 22 connections, but only 21 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2935]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_axi_interconnect_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:3364]
+INFO: [Synth 8-638] synthesizing module 'GND' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
+INFO: [Synth 8-256] done synthesizing module 'GND' (7#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_14ZA4I9' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:12]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_ds_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_ds_0' (8#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_pc_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_pc_0' (9#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'mipsfpga_test2_auto_pc_0' requires 56 connections, but only 54 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:363]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_14ZA4I9' (10#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:12]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_55LMD2' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:420]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_cc_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_cc_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_cc_0' (11#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_cc_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_cc' of module 'mipsfpga_test2_auto_cc_0' requires 82 connections, but only 80 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:743]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_55LMD2' (12#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:420]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_KOJWPQ' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:826]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_ds_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_ds_1' (13#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_1_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_ds' of module 'mipsfpga_test2_auto_ds_1' requires 76 connections, but only 72 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1121]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_KOJWPQ' (14#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:826]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1KIK0HL' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1196]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_ds_2' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_2_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_ds_2' (15#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_2_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_pc_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_pc_1' (16#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_1_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'mipsfpga_test2_auto_pc_1' requires 56 connections, but only 54 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1547]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1KIK0HL' (17#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1196]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1XKBXFY' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1604]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_ds_3' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_3_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_ds_3' (18#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_3_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_pc_2' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_2_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_pc_2' (19#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_2_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1XKBXFY' (20#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:1604]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_YABBXL' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2022]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_ds_4' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_4_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_ds_4' (21#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_ds_4_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_pc_3' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_3_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_pc_3' (22#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_pc_3_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'mipsfpga_test2_auto_pc_3' requires 56 connections, but only 54 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2373]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_YABBXL' (23#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2022]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_N1V0V8' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5171]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_us_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_us_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_us_0' (24#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_us_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'mipsfpga_test2_auto_us_0' requires 76 connections, but only 74 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5461]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_N1V0V8' (25#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5171]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1MBJOJN' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5538]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_auto_us_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_us_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_auto_us_1' (26#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_auto_us_1_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'mipsfpga_test2_auto_us_1' requires 72 connections, but only 70 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5804]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1MBJOJN' (27#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5538]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xbar_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xbar_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xbar_0' (28#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xbar_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'xbar' of module 'mipsfpga_test2_xbar_0' requires 78 connections, but only 76 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:5092]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_axi_interconnect_0_0' (29#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:3364]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_axi_tft_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_tft_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_axi_tft_0_0' (30#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_tft_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_tft_0' of module 'mipsfpga_test2_axi_tft_0_0' requires 61 connections, but only 56 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:3178]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_axi_uart16550_0_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_uart16550_0_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_axi_uart16550_0_1' (31#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_axi_uart16550_0_1_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_uart16550_0' of module 'mipsfpga_test2_axi_uart16550_0_1' requires 35 connections, but only 27 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:3235]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_blk_mem_gen_0_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_blk_mem_gen_0_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_blk_mem_gen_0_1' (32#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_blk_mem_gen_0_1_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_clk_wiz_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_clk_wiz_0_0' (33#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_mig_7series_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_mig_7series_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_mig_7series_0_0' (34#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_mig_7series_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'mipsfpga_test2_mig_7series_0_0' requires 61 connections, but only 56 given [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:3275]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_util_ds_buf_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_ds_buf_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_util_ds_buf_0_0' (35#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_ds_buf_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_util_vector_logic_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_util_vector_logic_0_0' (36#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_util_vector_logic_0_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_0_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_util_vector_logic_0_1' (37#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_0_1_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_util_vector_logic_2_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_2_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_util_vector_logic_2_0' (38#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_util_vector_logic_2_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xlconcat_0_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconcat_0_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xlconcat_0_1' (39#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconcat_0_1_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xlconstant_0_0' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xlconstant_0_0' (40#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xlconstant_0_1' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xlconstant_0_1' (41#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xlconstant_0_2' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_2_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xlconstant_0_2' (42#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_2_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'mipsfpga_test2_xlconstant_0_3' [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_3_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_xlconstant_0_3' (43#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/realtime/mipsfpga_test2_xlconstant_0_3_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2' (44#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2.v:2431]
+INFO: [Synth 8-256] done synthesizing module 'mipsfpga_test2_wrapper' (45#1) [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/sources_1/bd/mipsfpga_test2/hdl/mipsfpga_test2_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:34 ; elapsed = 00:01:22 . Memory (MB): peak = 371.934 ; gain = 199.113
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:35 ; elapsed = 00:01:22 . Memory (MB): peak = 371.934 ; gain = 199.113
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_5/mipsfpga_test2_axi_bram_ctrl_1_0_in_context.xdc] for cell 'mipsfpga_test2_i/axi_bram_ctrl_1'
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_5/mipsfpga_test2_axi_bram_ctrl_1_0_in_context.xdc] for cell 'mipsfpga_test2_i/axi_bram_ctrl_1'
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_12/mipsfpga_test2_clk_wiz_0_0_in_context.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0'
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_12/mipsfpga_test2_clk_wiz_0_0_in_context.xdc] for cell 'mipsfpga_test2_i/clk_wiz_0'
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc] for cell 'mipsfpga_test2_i/mig_7series_0'
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc] for cell 'mipsfpga_test2_i/mig_7series_0'
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'JB4_IBUF'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:112]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */mc0/mc_read_idle_r_reg}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:576]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */input_[?].iserdes_dq_.iserdesdq}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:576]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */mc0/mc_read_idle_r_reg}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:580]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */input_[?].iserdes_dq_.iserdesdq}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:580]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:586]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */DQSFOUND} -of [get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}]'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:586]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:588]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:588]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:589]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc:589]
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mipsfpga_test2_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mipsfpga_test2_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mipsfpga_test2_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 667.684 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:57 ; elapsed = 00:02:01 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:57 ; elapsed = 00:02:01 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_12/mipsfpga_test2_clk_wiz_0_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[10]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[11]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[12]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[2]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[3]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[4]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[5]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[6]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[7]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[8]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_addr[9]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_ba[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_ba[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_ba[2]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_cas_n. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 18).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_cke[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_cs_n[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 20).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dm[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dm[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 22).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[10]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 24).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[11]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[12]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 26).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[13]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[14]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 28).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[15]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 30).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[2]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[3]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 32).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[4]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[5]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 34).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[6]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[7]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 36).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[8]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dq[9]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 38).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dqs_n[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dqs_n[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 40).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dqs_p[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_dqs_p[1]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 42).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_odt[0]. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_ras_n. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 44).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR2_SDRAM_we_n. (constraint file  E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.runs/synth_1/.Xil/Vivado-1452-DESKTOP-LARRY/dcp_17/mipsfpga_test2_mig_7series_0_0_in_context.xdc, line 45).
+incorrect argument "-dict" for "set_property" at line 7 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 7 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 13 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 13 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 14 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 14 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 15 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 15 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 16 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 16 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 17 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 17 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 18 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 18 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 19 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 19 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 20 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 20 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 21 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 21 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 22 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 22 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 23 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 23 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 24 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 24 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 25 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 25 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 26 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 26 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 27 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 27 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 28 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 28 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 33 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 33 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 34 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 34 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 35 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 36 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 37 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 38 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 39 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 40 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 41 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 42 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 43 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 44 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 45 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 46 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 47 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 48 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 52 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 52 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 55 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 55 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 70 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 71 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 71 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 72 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 73 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 74 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 75 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 82 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 82 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 108 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 108 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 109 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 109 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 110 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 110 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 111 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 111 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 113 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 113 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 115 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 115 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 157 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 157 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 158 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 158 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 159 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 159 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 160 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 160 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 162 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 162 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 163 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 163 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 164 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 164 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 165 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 165 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 167 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 167 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 168 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 168 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 169 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 169 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 170 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 170 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 172 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 172 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 173 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 173 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 220 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 220 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 221 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 221 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/MIPS_MicroAptiv_UP_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/PWM_w_Int_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/ahblite_axi_bridge_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_bram_ctrl_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m01_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m02_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m03_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m04_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/m05_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_tft_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/axi_uart16550_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/blk_mem_gen_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/mig_7series_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/util_ds_buf_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/util_vector_logic_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/util_vector_logic_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/xlconstant_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/xlconstant_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mipsfpga_test2_i/xlconstant_3. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:02:02 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:00 ; elapsed = 00:02:03 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:02:04 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:02:04 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:01:00 ; elapsed = 00:02:04 . Memory (MB): peak = 667.684 ; gain = 494.863
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:02:05 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:02:05 . Memory (MB): peak = 667.684 ; gain = 494.863
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:02:05 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 7 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 7 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 13 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 13 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 14 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 14 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 15 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 15 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 16 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 16 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 17 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 17 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 18 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 18 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 19 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 19 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 20 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 20 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 21 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 21 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 22 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 22 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 23 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 23 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 24 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 24 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 25 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 25 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 26 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 26 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 27 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 27 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 28 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 28 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 33 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 33 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 34 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 34 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 35 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 36 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 37 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 38 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 39 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 40 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 41 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 42 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 43 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 44 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 45 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 46 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 47 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 48 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 52 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 52 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 55 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 55 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 70 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 71 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 71 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 72 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 73 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 74 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 75 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 82 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 82 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 108 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 108 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 109 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 109 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 110 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 110 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 111 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 111 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 113 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 113 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 115 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 115 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 157 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 157 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 158 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 158 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 159 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 159 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 160 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 160 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 162 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 162 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 163 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 163 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 164 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 164 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 165 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 165 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 167 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 167 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 168 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 168 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 169 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 169 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 170 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 170 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 172 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 172 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 173 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 173 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 220 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 220 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 221 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 221 of file E:/Peripheral_Interface_lab/mipsfpga_test2/mipsfpga_test2.srcs/constrs_1/imports/git/Nexys4DDR_Master.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+INFO: Moved 5 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:31 ; elapsed = 00:02:37 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:02:37 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:32 ; elapsed = 00:02:38 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------+----------+
+|      |BlackBox name                         |Instances |
++------+--------------------------------------+----------+
+|1     |mipsfpga_test2_MIPS_MicroAptiv_UP_0_0 |         1|
+|2     |mipsfpga_test2_PWM_w_Int_1_0          |         1|
+|3     |mipsfpga_test2_ahblite_axi_bridge_0_0 |         1|
+|4     |mipsfpga_test2_axi_bram_ctrl_1_0      |         1|
+|5     |mipsfpga_test2_axi_gpio_0_0           |         1|
+|6     |mipsfpga_test2_xbar_0                 |         1|
+|7     |mipsfpga_test2_auto_ds_0              |         1|
+|8     |mipsfpga_test2_auto_pc_0              |         1|
+|9     |mipsfpga_test2_auto_cc_0              |         1|
+|10    |mipsfpga_test2_auto_ds_1              |         1|
+|11    |mipsfpga_test2_auto_ds_2              |         1|
+|12    |mipsfpga_test2_auto_pc_1              |         1|
+|13    |mipsfpga_test2_auto_ds_3              |         1|
+|14    |mipsfpga_test2_auto_pc_2              |         1|
+|15    |mipsfpga_test2_auto_ds_4              |         1|
+|16    |mipsfpga_test2_auto_pc_3              |         1|
+|17    |mipsfpga_test2_auto_us_0              |         1|
+|18    |mipsfpga_test2_auto_us_1              |         1|
+|19    |mipsfpga_test2_axi_tft_0_0            |         1|
+|20    |mipsfpga_test2_axi_uart16550_0_1      |         1|
+|21    |mipsfpga_test2_blk_mem_gen_0_1        |         1|
+|22    |mipsfpga_test2_clk_wiz_0_0            |         1|
+|23    |mipsfpga_test2_mig_7series_0_0        |         1|
+|24    |mipsfpga_test2_util_ds_buf_0_0        |         1|
+|25    |mipsfpga_test2_util_vector_logic_0_0  |         1|
+|26    |mipsfpga_test2_util_vector_logic_0_1  |         1|
+|27    |mipsfpga_test2_util_vector_logic_2_0  |         1|
+|28    |mipsfpga_test2_xlconcat_0_1           |         1|
+|29    |mipsfpga_test2_xlconstant_0_0         |         1|
+|30    |mipsfpga_test2_xlconstant_0_1         |         1|
+|31    |mipsfpga_test2_xlconstant_0_2         |         1|
+|32    |mipsfpga_test2_xlconstant_0_3         |         1|
++------+--------------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------------+------+
+|      |Cell                                  |Count |
++------+--------------------------------------+------+
+|1     |mipsfpga_test2_MIPS_MicroAptiv_UP_0_0 |     1|
+|2     |mipsfpga_test2_PWM_w_Int_1_0          |     1|
+|3     |mipsfpga_test2_ahblite_axi_bridge_0_0 |     1|
+|4     |mipsfpga_test2_auto_cc_0              |     1|
+|5     |mipsfpga_test2_auto_ds_0              |     1|
+|6     |mipsfpga_test2_auto_ds_1              |     1|
+|7     |mipsfpga_test2_auto_ds_2              |     1|
+|8     |mipsfpga_test2_auto_ds_3              |     1|
+|9     |mipsfpga_test2_auto_ds_4              |     1|
+|10    |mipsfpga_test2_auto_pc_0              |     1|
+|11    |mipsfpga_test2_auto_pc_1              |     1|
+|12    |mipsfpga_test2_auto_pc_2              |     1|
+|13    |mipsfpga_test2_auto_pc_3              |     1|
+|14    |mipsfpga_test2_auto_us_0              |     1|
+|15    |mipsfpga_test2_auto_us_1              |     1|
+|16    |mipsfpga_test2_axi_bram_ctrl_1_0      |     1|
+|17    |mipsfpga_test2_axi_gpio_0_0           |     1|
+|18    |mipsfpga_test2_axi_tft_0_0            |     1|
+|19    |mipsfpga_test2_axi_uart16550_0_1      |     1|
+|20    |mipsfpga_test2_blk_mem_gen_0_1        |     1|
+|21    |mipsfpga_test2_clk_wiz_0_0            |     1|
+|22    |mipsfpga_test2_mig_7series_0_0        |     1|
+|23    |mipsfpga_test2_util_ds_buf_0_0        |     1|
+|24    |mipsfpga_test2_util_vector_logic_0_0  |     1|
+|25    |mipsfpga_test2_util_vector_logic_0_1  |     1|
+|26    |mipsfpga_test2_util_vector_logic_2_0  |     1|
+|27    |mipsfpga_test2_xbar_0                 |     1|
+|28    |mipsfpga_test2_xlconcat_0_1           |     1|
+|29    |mipsfpga_test2_xlconstant_0_0         |     1|
+|30    |mipsfpga_test2_xlconstant_0_1         |     1|
+|31    |mipsfpga_test2_xlconstant_0_2         |     1|
+|32    |mipsfpga_test2_xlconstant_0_3         |     1|
+|33    |GND                                   |     3|
+|34    |VCC                                   |     1|
+|35    |IBUF                                  |    23|
+|36    |OBUF                                  |    42|
++------+--------------------------------------+------+
+
+Report Instance Areas: 
++------+-----------------------+------------------------------------+------+
+|      |Instance               |Module                              |Cells |
++------+-----------------------+------------------------------------+------+
+|1     |top                    |                                    |  4904|
+|2     |  mipsfpga_test2_i     |mipsfpga_test2                      |  4839|
+|3     |    axi_interconnect_0 |mipsfpga_test2_axi_interconnect_0_0 |  3873|
+|4     |      m00_couplers     |m00_couplers_imp_14ZA4I9            |   393|
+|5     |      m01_couplers     |m01_couplers_imp_55LMD2             |   278|
+|6     |      m02_couplers     |m02_couplers_imp_KOJWPQ             |   240|
+|7     |      m03_couplers     |m03_couplers_imp_1KIK0HL            |   317|
+|8     |      m04_couplers     |m04_couplers_imp_1XKBXFY            |   393|
+|9     |      m05_couplers     |m05_couplers_imp_YABBXL             |   393|
+|10    |      s00_couplers     |s00_couplers_imp_N1V0V8             |   251|
+|11    |      s01_couplers     |s01_couplers_imp_1MBJOJN            |   243|
++------+-----------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:33 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:58 . Memory (MB): peak = 667.684 ; gain = 70.152
+Synthesis Optimization Complete : Time (s): cpu = 00:01:34 ; elapsed = 00:02:39 . Memory (MB): peak = 667.684 ; gain = 494.863
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+105 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:01:41 . Memory (MB): peak = 667.684 ; gain = 365.902
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.196 . Memory (MB): peak = 667.684 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 08 21:58:50 2018...
